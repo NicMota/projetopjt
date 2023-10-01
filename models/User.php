@@ -55,7 +55,7 @@ class User
         {
             $userArray = $this->findUserByUsername($username);
           
-            if($password == $userArray["pass"])
+            if(password_verify($password,$userArray["pass"]))
             {
                 session_start();
                 $_SESSION["user"] = $userArray["user"];     
