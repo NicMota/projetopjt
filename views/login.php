@@ -24,7 +24,7 @@ $userController = new UserController();
     {
         $user = $_POST['user'];
         $pass = $_POST['pass'];
-
+        
         $userController->login($user,$pass);
 
         

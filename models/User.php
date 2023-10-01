@@ -34,11 +34,11 @@ class User
        
     }
     public function createUser($user,$name,$email,$phone,$pass) : bool
-    {   
+    {       
         if(!$this->findUserByUsername($user))
         {   
-            
-            $res = $this->db->insert("users",["user","name","email","phone","pass"],[$user,$name,$email,$phone,$pass]);
+            $password = password_hash($pass,PASSWORD_BCRYPT);
+            $res = $this->db->insert("users",["user","name","email","phone","pass"],[$user,$name,$email,$phone,$password]);
             if($res)
                 return true;
             else
