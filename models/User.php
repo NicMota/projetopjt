@@ -11,7 +11,18 @@ class User
 
     public function getUsers() : Array
     {   
-           return $this->db->select("users",["user","email"]);
+           return $this->db->select("users",["id","user","email"]);
+    }
+    public function findUserById(int $id)
+    {
+        $res = $this->db->select("users",["user","name"],"id=".$id);
+        if($res != [])
+        {
+            return $res[0];
+        }else
+        {
+            return false;
+        }
     }
     public function findUserByUsername($username) 
     {

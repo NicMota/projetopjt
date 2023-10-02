@@ -30,11 +30,30 @@
                 foreach($users as $u)
                 {
                     echo '<tr>
-                                <td> '.$u['user'].'</td> 
-                                <td>'.$u['email'].'</td>   
+                                <td> '.$u['user'].' </td> 
+                                <td>'.$u['email'].' </td> 
+                                <td><button><a href="edit.php?id='.$u['id'].'">edit <a></button> <button id="deleteButton" > delete </button> </td> 
                           </tr>';
                 }
             ?>
         </table>
+
+        <script>
+            const button = document.getElementById("deleteButton");
+            button.onclick = ()=>
+            {
+                
+                var res = confirm("Are You Sure You Want to Delete?");
+                if(res)
+                {
+                    
+                }
+                else
+                {
+                    return;
+                }
+            }
+            
+        </script>
 </body>
 </html>

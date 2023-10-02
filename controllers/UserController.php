@@ -2,7 +2,7 @@
 include_once '../models/User.php';
 class UserController
 {
-    private $model;
+    private User $model;
     public function __construct()
     {
         $this->model = new User();
@@ -56,6 +56,10 @@ class UserController
 
         }
         
+    }
+    public function findUserById(int $id) : array
+    {
+        return $this->model->findUserById($id);
     }
 }
 

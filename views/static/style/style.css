@@ -1,0 +1,6 @@
+.navbar 
+{   
+   list-style-type: none; 
+   display: inline;
+   float: left;
+}
