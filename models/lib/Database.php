@@ -20,7 +20,7 @@ class Database
                     return false;
         }catch(PDOException $err)
         {
-            echo $err;
+            echo $err->getMessage();
             return false;
         }
     }
