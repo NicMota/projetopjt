@@ -70,9 +70,4 @@ class User
        
     }
 }
-$u = new User();
-try {
-    $u->findUserByUsername("dsa");
-} catch (PDOException $err) {
-    echo $err->getMessage();
-}
+

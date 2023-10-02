@@ -1,0 +1,37 @@
+*
+{
+    margin: 0;
+    padding:0;
+}
+.navbar
+{
+    background-color: antiquewhite;
+    width: 100%;
+    height: 70px;
+}
+.navbar ul
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   
+    
+
+}
+.navbar ul li
+{
+    background-color: aqua;
+    height: 70px;
+    border-radius: 10px;
+    
+}
+.navbar ul li:hover
+{
+    background-color: aquamarine;
+}
+.navbar ul li a
+{
+    color:red;
+    text-decoration: none;
+}
+
