@@ -7,21 +7,28 @@
 ?>
 
 <body>
-    <form action="" method="POST">
+    <div class="position-absolute top-50 start-50 translate-middle">
+        <form action="" method="POST" >
 
-            <label for="username">username:</label>
-            <input type="text" name="user" id=""><br>
-            <label for="username">name:</label>
-            <input type="text" name="name" id=""><br>
-            <label for="username">email:</label>
-            <input type="text" name="email" id=""><br>
-            <label for="username">phone:</label>
-            <input type="text" name="phone" id=""><br>
-            <label for="password">password:</label>
-            <input type="password" name="pass" id=""><br>
-            <button type="submit" name="submit">send</button>
+                <label for="username">username:</label>
+                <input type="text" name="user" id=""><br>
+                
+                <label for="username">name:</label>
+                <input type="text" name="name" id=""><br>
 
-    </form>
+                <label for="username">email:</label>
+                <input type="text" name="email" id=""><br>
+
+                <label for="username">phone:</label>
+                <input type="text" name="phone" id=""><br>
+
+                <label for="password">password:</label>
+                <input type="password" name="pass" id=""><br>
+
+                <button type="submit" name="submit">send</button>
+
+        </form>
+    </div>
 
 </body>
 
