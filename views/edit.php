@@ -12,10 +12,10 @@
     <form action="" method="post">
     <?php
            echo' <label for="username">username:</label>
-                <input type="text" name="user" id="" value="'.$user['user'].'"><br>
+                <input type="text" name="userEdit" id="" value="'.$user['user'].'"><br>
                 
                 <label for="username">name:</label>
-                <input type="text" name="name" id="" value="'.$user['name'].'"><br>
+                <input type="text" name="nameEdit" id="" value="'.$user['name'].'"><br>
 
 
                 <button type="submit" name="submit">edit</button>'
@@ -24,6 +24,13 @@
     </form>
 
 <?php
-
+    if(isset($_POST['submit']))
+    {
+        $userEdit = $_POST['userEdit'];
+        $nameEdit = $_POST['nameEdit'];
+        $userController->editUser($id,$userEdit);
+        
+    }
+    
 ?>
 </body>

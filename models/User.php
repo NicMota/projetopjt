@@ -80,5 +80,9 @@ class User
         }
        
     }
+    public function edit($id,$newUser,$newName)
+    {
+        $query = "UPDATE "
+    }
 }
 

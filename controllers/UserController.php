@@ -22,7 +22,11 @@ class UserController
         }
        
     }
-     public function register($user,$name,$email,$phone,$pass) : bool
+    public function edit($id,$newUser,$newName) : bool
+    {
+        return $model->edit($id,$newUser,$newName);
+    }
+    public function register($user,$name,$email,$phone,$pass) : bool
     {   
 
         try
