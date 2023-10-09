@@ -29,10 +29,14 @@ class Password
         $token = bin2hex(random_bytes($length)); 
         return $token;
     }
+    public function verifyEmail($email)
+    {
+        
+    }
     public function sendTokenEmail($toEmail)
     {   
         
-        $token = $this->genToken();
+        $token = $this->getToken();
         try {
             
             
@@ -42,8 +46,8 @@ class Password
     
             $this->mail->isHTML(true);
             $this->mail->Subject = 'troca troca de senha';
-            $this->mail->Body    = 'Este é o conteúdo da mensagem em <b>HTML!</b>';
-            $this->mail->AltBody = 'Para visualizar essa mensagem acesse http://localhost/projetopjt/views/newPasswordForm.php?token=';
+            $this->mail->Body    = 'Para visualizar essa mensagem acesse http://localhost/projetopjt/views/newPasswordForm.php?token='.$token;
+        
             //$mail->addAttachment('/tmp/image.jpg', 'nome.jpg');
             if(!$this->mail->send()) {
                 echo 'Não foi possível enviar a mensagem.<br>';
