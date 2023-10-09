@@ -96,7 +96,31 @@ class Database
         }
        
     }
+    public function update($table, $rows, $values,$where) : bool
+    
+    {
+        $query = "UPDATE ".$table." SET ";
+        foreach ($rows as $index => $r) {
+
+            $count = count($rows);
+            $value = $values[$index];
+            if(gettype($value) == 'string')
+                $value = "'".$value."'";
+            
+            
+            $query .=$r."=".$value;
+            if($index != $count-1)
+                $query.=',';
+        }
+        $query.= " WHERE ".$where;
+        
+        $stmt = $this->conn->prepare($query);
+        return $stmt->execute();
+    }
+
 }
+$db = new Database();
+$db->update('users',['id','name'],[7,'nick'],'id=7');
 
 
 

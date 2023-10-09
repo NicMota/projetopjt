@@ -1,6 +1,200 @@
-.navbar 
-{   
-   list-style-type: none; 
-   display: inline;
-   float: left;
+
+
+*
+{
+   margin:0;
+   padding: 0;
+   font-family: andale mono,monospace;
 }
+body
+{
+   background-image: url(../images/background_image.jpg);
+   background-size:cover;
+   overflow:hidden ;
+}
+
+/* Navbar css */
+.navbar
+{  
+   display: flex;
+   height: 60px;
+   width: 100%;
+   background-color: rgba(54, 31, 3, 0.384);
+   overflow: hidden;
+
+   
+}
+.navbar h1
+{
+   color: white;
+   margin: auto 10px;
+}
+.navbar ul
+{  
+   margin:auto auto;
+ 
+}
+.navbar .link
+{
+  
+   
+   display: inline-block;
+   width: 100px;
+   font-weight: bold;
+  
+   
+}
+
+.navbar .link a
+{
+
+   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color:rgb(247, 238, 238);
+   text-decoration: none;
+   height: 100%;
+   width: 100%;
+  
+}
+.navbar .link a:hover
+{
+   text-decoration: underline solid white 2px;
+   transition: .1s;
+}
+
+.form-card
+{
+   background-color: rgb(255, 255, 255);
+   width:fit-content;
+   height:100%;
+   margin: 10% auto;
+   padding: 10px;
+   border-radius: 10px;
+   border: 1px solid black;
+
+  
+}
+.form-card form
+{  
+   padding: 20px;
+   
+   color:rgb(0, 0, 0);
+   display: flex;
+   flex-direction: column;
+ 
+}
+.form-card label
+{
+   font-weight: bold;
+   font-size: large;
+}
+.form-card input
+{
+   padding:5px;
+   font-size: 25px;
+   border:none;
+   border-bottom: 1px solid black;
+   outline: none;
+   margin: 10px;
+}
+
+.form-card button
+{
+      height: 100%;
+      margin: 20px auto;
+      width:fit-content;
+      background-color:rgba(133, 133, 255, 0.541);
+      border: none;
+      border-bottom: 1px solid black;
+      
+      font-size: 20px;
+      cursor:pointer;
+}
+.form-card button:hover
+{
+   background-color: rgb(187, 120, 250);
+   transition: .1s;
+   
+}
+.form-card select
+{
+   margin: 25px 5px 0px 5px;
+   font-size: 20px;
+}
+.form-card a{
+   margin-top: 8px;
+}
+.form-card #forgotPasswordForm input
+{
+   width: 800px;
+}
+
+.table-card
+{
+   margin: 5% auto;
+  
+   background-color: rgb(27, 68, 65);
+   width: fit-content;
+   height: 100%;
+   border: 2px rgb(255, 145, 0) solid;
+   padding: 15px;
+   border-radius: 15px;
+   
+}
+.table-card table
+{
+   margin:10px;
+   text-align: center;
+   color:rgb(255, 174, 0);
+   font-size: 25px;
+   border-spacing: 30px 10px;
+}
+.table-card table th
+{
+   border-bottom: 2px solid rgb(0, 0, 0);
+}
+.table-card .yellow-button
+{
+   text-decoration: none;
+   color:rgb(54, 51, 0);
+   font-weight: bold;
+   background-color:rgb(255, 255, 176); ;
+   border: 2px solid rgb(39, 39, 39);
+   font-size: 25px;
+   padding: 2px;
+}
+
+.table-card .yellow-button:hover
+{
+   background-color:rgb(39, 39, 39);
+   color:rgb(255, 255, 176); 
+   transition: .2s;
+   cursor:pointer;
+}
+.table-card .red-button
+{
+   text-decoration: none;
+   color:rgb(59, 3, 3);
+   font-weight: bold;
+   background-color:rgb(253, 135, 106); 
+   border: 2px solid rgb(59, 3, 3);
+   font-size: 25px;
+   padding: 2px;
+}
+.table-card .red-button:hover
+{
+   background-color:rgb(59, 3, 3);
+   color:rgb(253, 135, 106); 
+   transition: .2s;
+   cursor:pointer;
+}
+
+.table-card button
+{
+   font-size: 25px;
+}
+
+
+

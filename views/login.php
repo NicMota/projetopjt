@@ -7,15 +7,24 @@ $userController = new UserController();
     include_once 'inc/header_inc.php';
 ?>
 <body>
-    <form action="" method="post">
-        <input type="text" name="user" id="" placeholder="username"><br>
-        <input type="text" name='pass' id='' placeholder='password'><br>
-        <button type="submit" name='submit'>loggin</button>
-    </form>
+    <div class="form-card">
+
+        <form action="" method="post">
+            <label for="">username:</label>
+            <input type="text" name="user" id="" placeholder="username">
+            <label for="">pass:</label>
+            <input type="text" name='pass' id='' placeholder='password'>
+            <button type="submit" name='submit'>loggin</button>
+            <a href="register.php">Don't Have an Account? Click Here</a>
+            <a href="forgotPassword.php">Forgot your Password?</a>
+        </form>
+    
+    </div>
 </body>
 </html>
 
 <?php
+
     if(isset($_POST['submit']))
     {
         $user = $_POST['user'];

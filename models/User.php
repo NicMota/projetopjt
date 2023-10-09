@@ -11,11 +11,11 @@ class User
 
     public function getUsers() : Array
     {   
-           return $this->db->select("users",["id","user","email"]);
+           return $this->db->select("users",["id","user","email","admin"]);
     }
     public function findUserById(int $id)
     {
-        $res = $this->db->select("users",["user","name"],"id=".$id);
+        $res = $this->db->select("users",["user","name","admin"],"id=".$id);
         if($res != [])
         {
             return $res[0];
@@ -70,7 +70,7 @@ class User
             {
                 session_start();
                 $_SESSION["user"] = $userArray["user"];     
-                          
+                $_SESSION["role"] = $userArray["admin"];          
                 return true;
             }
         }
@@ -80,9 +80,15 @@ class User
         }
        
     }
-    public function edit($id,$newUser,$newName)
-    {
-        $query = "UPDATE "
+    public function edit($id,$newUser,$newName,$newRole) : bool
+    {   
+        if($this->db->update('users',['user','name','admin'],[$newUser,$newName,$newRole],'id='.$id))
+        {
+            return true;
+        }else
+        {
+            return false;
+        }; 
     }
 }
 

@@ -2,15 +2,15 @@
 include_once '../models/User.php';
 class UserController
 {
-    private User $model;
+    private User $userModel;
     public function __construct()
     {
-        $this->model = new User();
+        $this->userModel = new User();
     }
     public function index() : array
     {
         try {
-            $res = $this->model->getUsers();  
+            $res = $this->userModel->getUsers();  
             if($res!=null)
             {      
                     return $res;
@@ -22,16 +22,30 @@ class UserController
         }
        
     }
-    public function edit($id,$newUser,$newName) : bool
-    {
-        return $model->edit($id,$newUser,$newName);
+    public function editUser($id,$newUser,$newName,$newRole) : bool
+    {   
+        
+        try {
+            if($this->userModel->edit($id,$newUser,$newName,$newRole))
+            {   
+                
+                header("Refresh: 1");
+                return true;
+            }else
+            {
+                return false;
+            };
+        } catch (PDOException $err) {
+            echo $err->getMessage();
+            return false;
+        }
     }
     public function register($user,$name,$email,$phone,$pass) : bool
     {   
 
         try
         {
-            $res = $this->model->createUser($user,$name,$email,$phone,$pass);
+            $res = $this->userModel->createUser($user,$name,$email,$phone,$pass);
             if($res)
             {
                 echo 'User Created Succesfully';
@@ -51,19 +65,19 @@ class UserController
     }
     public function login($username,$password)
     {
-        if($this->model->login($username,$password))
+        if($this->userModel->login($username,$password))
         {
             header('Location: ./loggedView.php');
         }
         else
         {
-
+            echo "Credentials Not Match With Any Register in The System";
         }
         
     }
     public function findUserById(int $id) : array
     {
-        return $this->model->findUserById($id);
+        return $this->userModel->findUserById($id);
     }
 }
 
