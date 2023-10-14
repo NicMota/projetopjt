@@ -57,8 +57,9 @@ class Database
         return $res;
     }
 
-    public function select($table,$rows = "*",$where = null) : Array
+    public function select($table,$rows = "*",$where = null) 
     {   
+        $value = ':value';
         $query = "SELECT ";
         if($rows != "*")
         {   
@@ -80,23 +81,40 @@ class Database
         
         if($where != null)
         {
-            $query.=" WHERE ".$where;
+            $query.=" WHERE ".$where[0]." ".$where[1]." :value ;" ;
+        }
+    
+        try {
+        $stmt = $this->conn->prepare($query);
+        if($where !=null){
+            if(gettype($where[2]) == 'string' )
+                $stmt->bindParam(':value',$where[2],PDO::PARAM_STR);
+            if(gettype($where[2]) == 'integer')
+                $stmt->bindParam(':value',$where[2],PDO::PARAM_INT);
         }
 
+
+
+       
+            
       
-        $stmt = $this->conn->prepare($query);
-        if($stmt->execute()){
-            $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   
-            return $res;
-        }
-        else
-        {
-            return [];
+            
+            if($stmt->execute()){
+                $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                
+                return $res;
+            }
+            else
+            {
+                return [];
+            }
+        
+        } catch (PDOException $e) {
+           echo $e->getMessage();
         }
        
     }
-    public function update($table, $rows, $values,$where) : bool
+    public function update($table, $rows, $values,$where) 
     
     {
         $query = "UPDATE ".$table." SET ";
@@ -112,15 +130,25 @@ class Database
             if($index != $count-1)
                 $query.=',';
         }
-        $query.= " WHERE ".$where;
+        $query.= " WHERE ".$where[0]." ".$where[1].":value;";
+        echo $query;
+        try {
+            $stmt = $this->conn->prepare($query);
+            if(gettype($where[2]) == 'string' )
+                $stmt->bindParam(':value',$where[2],PDO::PARAM_STR);
+            if(gettype($where[2]) == 'integer')
+                $stmt->bindParam(':value',$where[2],PDO::PARAM_INT);
+
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
         
-        $stmt = $this->conn->prepare($query);
-        return $stmt->execute();
     }
 
 }
-$db = new Database();
-$db->update('users',['id','name'],[7,'nick'],'id=7');
+
 
 
 

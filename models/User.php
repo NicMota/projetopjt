@@ -15,7 +15,7 @@ class User
     }
     public function findUserById(int $id)
     {
-        $res = $this->db->select("users",["user","name","admin"],"id=".$id);
+        $res = $this->db->select("users",["user","name","admin"],['id','=',$id]);
         if($res != [])
         {
             return $res[0];
@@ -27,7 +27,7 @@ class User
     public function findUserByUsername($username) 
     {
         
-        $res = $this->db->select("users","*","user='".$username."'");
+        $res = $this->db->select("users","*",['user','=',$username]);
         if($res != [])
         {   
             if(count($res) == 1)
@@ -37,6 +37,26 @@ class User
             else
             {
                 Throw new Exception("more than one user with that name");
+            }
+        }else
+        {
+            return false;
+        }
+       
+    }
+    public function findUserByEmail($email) 
+    {
+        
+        $res = $this->db->select("users","*",['email','=',$email]);
+        if($res != [])
+        {   
+            if(count($res) == 1)
+            {
+                return $res[0];
+            }
+            else
+            {
+                Throw new Exception("more than one user with that email");
             }
         }else
         {
@@ -82,13 +102,23 @@ class User
     }
     public function edit($id,$newUser,$newName,$newRole) : bool
     {   
-        if($this->db->update('users',['user','name','admin'],[$newUser,$newName,$newRole],'id='.$id))
+        if($this->db->update('users',['user','name','admin'],[$newUser,$newName,$newRole],['id','=',$id]))
         {
             return true;
         }else
         {
             return false;
-        }; 
+        }
+    }
+    public function changePassword($email,$newPassword)
+    {   $newPassword = password_hash($newPassword,PASSWORD_BCRYPT);
+        if($this->db->update('users',['pass'],[$newPassword],['email','=',$email]))
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
     }
 }
 

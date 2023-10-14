@@ -13,7 +13,7 @@ $userController = new UserController();
             <label for="">username:</label>
             <input type="text" name="user" id="" placeholder="username">
             <label for="">pass:</label>
-            <input type="text" name='pass' id='' placeholder='password'>
+            <input type="password" name='pass' id='' placeholder='password'>
             <button type="submit" name='submit'>loggin</button>
             <a href="register.php">Don't Have an Account? Click Here</a>
             <a href="forgotPassword.php">Forgot your Password?</a>
