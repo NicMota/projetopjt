@@ -1,34 +1,29 @@
 <?php
-     session_start();
+    include_once 'inc/header_inc.php';
+    
      if(isset($_SESSION["role"])) {
-      
+
         if($_SESSION["role"] != 1)
-        {
+        { 
             http_response_code(403);
             exit;
-        }
-            
+        }  
+
      }else
-     {
+     {    
+
         http_response_code(403);
         exit;
+
      }
      
+     $users = $userController->index();
  ?>
 
 
-<?php
-    include_once '../controllers/UserController.php';
-    $userController = new UserController();
 
-    $users = $userController->index();
-    
-    
-?>
 
-<?php
-    include_once 'inc/header_inc.php';
-?>
+
     <body>  
         <div class="table-card">
             <table>

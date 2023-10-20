@@ -1,10 +1,7 @@
 <?php
     include_once 'inc/header_inc.php';
 ?>
-<?php
-    require_once '../controllers/PasswordController.php';
-    $passwordController = new PasswordController();
-?>
+
 <body>
     
     <div class="form-card">

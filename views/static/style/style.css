@@ -8,9 +8,11 @@
 }
 body
 {
+  
    background-image: url(../images/background_image.jpg);
    background-size:cover;
-   overflow:hidden ;
+   overflow:auto;
+   
 }
 
 /* Navbar css */
@@ -69,9 +71,9 @@ body
    background-color: rgb(255, 255, 255);
    width:fit-content;
    height:100%;
-   margin: 10% auto;
+   margin:5%   auto;
    padding: 10px;
-   border-radius: 10px;
+   border-radius: 5px;
    border: 1px solid black;
 
   
@@ -99,7 +101,21 @@ body
    outline: none;
    margin: 10px;
 }
-
+.form-card .dragImage
+{
+   text-align: center;
+   border: thin solid black;
+   padding:25%;
+}
+.form-card input[type='file']
+{
+   background-color: rgba(166, 166, 166, 0.83);
+   display: none;
+}
+.form-card .fileLabel
+{
+   cursor:pointer;
+}
 .form-card button
 {
       height: 100%;
@@ -190,11 +206,148 @@ body
    transition: .2s;
    cursor:pointer;
 }
+.content
+{
+   margin: 15px auto;
 
+   width:90%;
+   height: 100%;
+  
+}
 .table-card button
 {
    font-size: 25px;
 }
+.top-content
+{
+   height: 600px; 
+   width: 100%;
+  
+   overflow: hidden;
+}
+.middle-content
+{  margin-top: 30px;
+   width: 100%;
+   font-size: 2em;
+}
+#image-museum
+{
+   margin: 0 auto;
+   width: 100%;
+   height: auto;
+   position: relative;
+   top: -200px;
+}
+.exhibition
+{  
+   width: 100%;
+   
+   display: flex;
+   margin:30px auto;
+}
+.exhibition-card
+{
+   border: 2px rgb(251, 251, 251) solid;
+   display: flex;
+   flex-direction: column;
+   background-color: rgb(35, 35, 35);
+   width: 40%;
+   min-width: fit-content;
+   margin: 10px;
+   height: 600px;
+   
+ 
+}
+#exhibition-text
+{
+   color:white;
+   
+}
+.exhibition-content
+{  
+   height: 90%;
 
+}
+.exhibition-button
+{  
+   font-size: 1.5em;
+   margin: 0 auto;
+   width:fit-content;
+   height: fit-content;
+   color: white;
+   background-color: rgb(208, 99, 99);
+   text-decoration: none;
+   
+}
+.collection
+{
+   background-color: rgb(44, 44, 44);
+   box-sizing:border-box;
+   width:100%;
+   height: fit-content;
+   padding: 10px;
+   overflow: hidden;
+ 
+}
+.collection h1
+{
+  
+   color:white;
+}
+.collection-item
+{  
+   background-image: url('../images/image1.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   width: 250px;
+   height:250px;
+   margin:2px;
+   border: 1px solid white;
+   display: flex;
+   white-space: nowrap;
+   
+}
+.active
+{
+   animation: moveElement 10s linear infinite;
+}
+@keyframes moveElement {
+   0%{
+     transform: translate(-100%);
+   }
 
+   100%
+   {
+      transform: translate(100%);
+   }
+   
+}
+.slider
+{  
+  
+   
+   width: fit-content;
+   flex-direction: column;
+   height: fit-content;
+   overflow: hidden;
+  
+   margin: 0 auto;
+   
+}
+.slider-row
+{  
+   
+   display: flex;
+   flex-direction: row;
+   overflow: hidden;
 
+}
+.visit-button
+{ 
+   margin: 0 auto;
+   color:white;
+   text-decoration: none;
+   border-bottom: 2px solid rgb(255, 255, 255);
+   padding: 2px;
+   border-radius: 2px;
+}

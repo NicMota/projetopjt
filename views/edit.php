@@ -1,7 +1,7 @@
 <?php
-      include_once '../controllers/UserController.php';
-      $userController = new UserController();
-
+    include_once 'inc/header_inc.php';
+?>
+<?php
       $user = 
       [
         'user' => '',
@@ -24,9 +24,7 @@
     
 
 ?>
-<?php
-    include_once 'inc/header_inc.php';
-?>
+
 <body>
     <div class="form-card">
       <form action="" method="post">

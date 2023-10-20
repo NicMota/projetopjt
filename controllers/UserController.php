@@ -67,7 +67,7 @@ class UserController
     {
         if($this->userModel->login($username,$password))
         {
-            header('Location: ./loggedView.php');
+            header('Location: ./index.php');
         }
         else
         {
@@ -78,6 +78,11 @@ class UserController
     public function findUserById(int $id) : array
     {
         return $this->userModel->findUserById($id);
+    }
+    public function logout()
+    {
+        session_destroy();
+        header("Location: usersHome.php");
     }
 }
 
