@@ -45,7 +45,7 @@ class UserController
 
         try
         {
-            $res = $this->userModel->createUser($user,$name,$email,$phone,$pass);
+            $res = $this->userModel->createUser($user,$name,$email,$phone,$pass,0);
             if($res)
             {
                 echo 'User Created Succesfully';

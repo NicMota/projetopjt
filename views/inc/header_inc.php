@@ -3,9 +3,9 @@
   session_start();
   
   require_once '../controllers/UserController.php';
-  require_once '../controllers/PasswordController.php';
+  //require_once '../controllers/PasswordController.php';
   require_once '../controllers/CollectionController.php';
-  $passwordController = new PasswordController();
+  //$passwordController = new PasswordController();
   $userController = new UserController();
   $collectionController = new CollectionController();
 

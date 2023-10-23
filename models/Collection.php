@@ -15,7 +15,11 @@ class Collection
     }
     public function addItem($name,$author,$imagePath)
     {
-        $this->db->insert('collection',['name','author','imageName'],[$name,$author,$imagePath]);       
+        $res = $this->db->insert('collection',['name','author','imageName'],[$name,$author,$imagePath]);    
+        if($res)
+            return true;
+        else 
+            return false;   
     }
     
 }

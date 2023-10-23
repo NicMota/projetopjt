@@ -64,12 +64,12 @@ class User
         }
        
     }
-    public function createUser($user,$name,$email,$phone,$pass) : bool
+    public function createUser($user,$name,$email,$phone,$pass,$role) : bool
     {       
         if(!$this->findUserByUsername($user))
         {   
             $password = password_hash($pass,PASSWORD_BCRYPT);
-            $res = $this->db->insert("users",["user","name","email","phone","pass"],[$user,$name,$email,$phone,$password]);
+            $res = $this->db->insert("users",["user","name","email","phone","pass",'admin'],[$user,$name,$email,$phone,$password,$role]);
             if($res)
                 return true;
             else
