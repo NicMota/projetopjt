@@ -82,7 +82,7 @@ class UserController
     public function logout()
     {
         session_destroy();
-        header("Location: usersHome.php");
+        header("Location: ./index.php");
     }
 }
 

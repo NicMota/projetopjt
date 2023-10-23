@@ -5,7 +5,7 @@
 <body>
     
     <div class="form-card">
-        <form action="" method="post">
+        <form enctype="multipart/form-data" method="post">
             <label for="">Name:</label>
             <input type="text" name="name" id="">
             <label for="">Author:</label>
@@ -29,14 +29,19 @@
     
         $name = $_POST['name'];
         $author = $_POST['author'];
-        
-        $itemImage = $_POST['itemImage'];
-        echo $itemImage;
 
+   
+
+        $itemName = basename($_FILES['itemImage']['name']);
+        $itemPath = './static/images/'.$itemName;
+
+      
+        $res = move_uploaded_file($_FILES['itemImage']['tmp_name'],$itemPath);
+        if($res)
+        {
+            $collectionController->addItem($name,$author,$itemName);
+        }
         
-       
-       
-        $collectionController->addItem($name,$author,$itemImage);
         
     }
-?>
+?>  

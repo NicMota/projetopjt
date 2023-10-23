@@ -1,5 +1,21 @@
 <?php 
+include_once '../models/lib/Database.php';
 class Collection 
 {
+    private Database $db;
+
+    public function __construct()
+    {
+        $this->db =new Database();
+    }
+
+    public function getAllItems()
+    {
+        return $this->db->select('collection',['name','author','imageName']);
+    }
+    public function addItem($name,$author,$imagePath)
+    {
+        $this->db->insert('collection',['name','author','imageName'],[$name,$author,$imagePath]);       
+    }
     
 }

@@ -9,10 +9,11 @@ class CollectionController
     }
     public function index()
     {
-        
+        return $this->collectionModel->getAllItems();
     }
-    public function addItem($name,$author,$imagePath)
+    public function addItem($name,$author,$imageName)
     {
-        //$this->collectionModel->addItem($name,$author,$imagePath);
+      $this->collectionModel->addItem($name,$author,$imageName);
+      
     }
 }
