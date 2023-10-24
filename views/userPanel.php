@@ -68,20 +68,23 @@
         </div>
     </body>
     <script>
-        const button = document.getElementById("deleteButton");
-        button.onclick = ()=>
-        {
-            
-            var res = confirm("Are You Sure You Want to Delete?");
-            if(res)
+        var buttons = document.getElementsByClassName('red-button');
+        buttons.forEach(element => {
+           element.onclick = () =>
             {
                 
+                var res = confirm("Are You Sure You Want to Delete?");
+                if(res)
+                {
+                    
+                }
+                else
+                {
+                    return;
+                }
             }
-            else
-            {
-                return;
-            }
-        }
+        });
+      
         
     </script>
 

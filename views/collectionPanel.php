@@ -37,6 +37,12 @@ include_once 'inc/header_inc.php';
                     <td>
                         <?php echo $item['author']; ?>
                     </td>
+                    <td>
+                        <a href='' class='yellow-button'>edit</a>
+                    </td>
+                    <td>
+                        <a  href='' class='red-button'>delete</a>
+                    </td>
                  </tr>    
             <?php
                 }
