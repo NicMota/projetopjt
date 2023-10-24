@@ -6,6 +6,9 @@
     <div class="content">
 
         <div class='top-content'>
+            <h1> 
+                MUSEU PAULO AGOSTINHO SOBRINHO
+            </h1>
             <img src="./static/images/museum.jpg" id='image-museum'>
         </div>
         <div class="middle-content">

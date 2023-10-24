@@ -55,35 +55,27 @@
                         {
                             $role = 'admin';
                         }
-                        echo '<tr>
-                                    <td> '.$u['user'].' </td> 
-                                    <td>'.$u['email'].' </td> 
-                                    <td>'.$role.'</td>
-                                    <td><a href="edit.php?id='.$u['id'].'" class="yellow-button">edit</a> </td>
-                                    <td><button id="deleteButton" class="red-button"> delete </button> </td> 
-                            </tr>';
+                ?>
+                         <tr>
+                            <td><?php echo $u['user']?> </td> 
+                            <td><?php echo $u['email'] ?></td> 
+                            <td><?php echo $role ?></td>
+                            <td><a href="edit.php?id='.$u['id'].'" class="yellow-button">edit</a> </td>
+                            <td><button id="deleteButton" class="red-button" action='delete()'> delete </button> </td> 
+                        </tr>
+                    
+                <?php  
                     }
                 ?>
             </table>
         </div>
     </body>
     <script>
-        var buttons = document.getElementsByClassName('red-button');
-        buttons.forEach(element => {
-           element.onclick = () =>
-            {
-                
-                var res = confirm("Are You Sure You Want to Delete?");
-                if(res)
-                {
-                    
-                }
-                else
-                {
-                    return;
-                }
-            }
-        });
+
+        function delete()
+        {
+            alert('sim');
+        }
       
         
     </script>
