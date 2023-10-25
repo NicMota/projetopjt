@@ -61,7 +61,7 @@
                             <td><?php echo $u['email'] ?></td> 
                             <td><?php echo $role ?></td>
                             <td><a href="edit.php?id='.$u['id'].'" class="yellow-button">edit</a> </td>
-                            <td><button id="deleteButton" class="red-button" action='delete()'> delete </button> </td> 
+                            <td><button id="deleteButton" class="red-button"  > delete</button>  </td> 
                         </tr>
                     
                 <?php  
@@ -70,14 +70,22 @@
             </table>
         </div>
     </body>
-    <script>
-
-        function delete()
-        {
-            alert('sim');
-        }
-      
-        
-    </script>
+  
 
 </html>
+<script>
+
+
+function deleteUser()
+{
+    let res =confirm("asd");
+}
+let buttons = document.querySelectorAll('.red-button');
+buttons.forEach(button => {
+    button.addEventListener('click',deleteUser);
+});
+
+
+
+
+</script>
