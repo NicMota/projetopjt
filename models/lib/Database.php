@@ -146,6 +146,26 @@ class Database
         }
         
     }
+    public function delete($table,$where)
+    {
+    try {
+        $query = "DELETE FROM ".$table."WHERE ".$where[0]." ".$where['1']." :value;";
+        $this->conn->prepare($query);
+        if(gettype($where[2]) == 'string' )
+            $stmt->bindParam(':value',$where[2],PDO::PARAM_STR);
+        if(gettype($where[2]) == 'integer')
+            $stmt->bindParam(':value',$where[2],PDO::PARAM_INT);
+
+        return $stmt->execute();
+            
+    } catch (PDOException $err) {
+        echo $e->getMessage();
+        return false;
+    }
+     
+        
+        
+    }
 
 }
 

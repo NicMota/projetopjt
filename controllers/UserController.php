@@ -84,5 +84,10 @@ class UserController
         session_destroy();
         header("Location: ./index.php");
     }
+    public function delete(int $id)
+    {   
+      
+        return $this->userModel->delete($id);
+    }
 }
 

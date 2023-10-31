@@ -120,5 +120,22 @@ class User
             return false;
         }
     }
+    public function delete(int $id)
+    {
+        if($this->findUserById($id))
+        {
+            if($this->delete('user',['id','=',$id]))
+            {   
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }else
+        {
+            return false;
+        }
+    }
 }
 
