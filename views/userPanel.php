@@ -25,6 +25,15 @@
 
 
     <body>  
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Are You Sure You Want To Delete This User?</h2>
+            
+                <button class="red-button" id="saveChanges">Delete</button>
+                <a class='yellow-button' id="closeModal" href='#'>Cancel</a>
+            </div>
+        </div>
         <div class="table-card">
             <table>
                 <tr>
@@ -60,8 +69,8 @@
                             <td><?php echo $u['user']?> </td> 
                             <td><?php echo $u['email'] ?></td> 
                             <td><?php echo $role ?></td>
-                            <td><a href="edit.php?id='.$u['id'].'" class="yellow-button">edit</a> </td>
-                            <td><button id="deleteButton" class="red-button"  > delete</button>  </td> 
+                            <td><a href="edit.php?id=<?php echo $u['id'] ?>" class="yellow-button">edit</a> </td>
+                            <td><button id="deleteButton" class="red-button openModal" > delete</button>  </td> 
                         </tr>
                     
                 <?php  
@@ -76,16 +85,22 @@
 <script>
 
 
-function deleteUser()
-{
-    let res =confirm("asd");
-}
-let buttons = document.querySelectorAll('.red-button');
-buttons.forEach(button => {
-    button.addEventListener('click',deleteUser);
+$(document).ready(function() {
+    $(".openModal").click(function() {
+        $("#myModal").fadeIn();
+        
+    });
+
+    $("#closeModal").click(function() {
+        $("#myModal").fadeOut();
+    });
+
+    $("#saveChanges").click(function() {
+        <?php
+            echo 'penis';
+        ?>
+    });
 });
-
-
 
 
 </script>
