@@ -124,7 +124,7 @@ class User
     {
         if($this->findUserById($id))
         {
-            if($this->delete('user',['id','=',$id]))
+            if($this->db->delete('users',['id','=',$id]))
             {   
                 return true;
             }

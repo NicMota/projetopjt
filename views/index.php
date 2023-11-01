@@ -1,6 +1,9 @@
 <?php 
     include_once 'inc/header_inc.php';
 ?>
+<?php
+    $collection = $collectionController->index();
+?>
 <body>
   
     <div class="content">
@@ -46,12 +49,18 @@
                     OUR COLLECTION
                 </h1>
                 <div class="slider">
+                  
                     <div class="slider-row active">
-                        <div class="collection-item ">             
+                        <?php 
+                        foreach ($collection as $item) 
+                        {
+                        ?>
+                        <div class="collection-item ">          
+                            <img src=<?php echo "./static/images/".$item['imageName']; ?>  alt="">   
                         </div>
-                        <div class="collection-item ">             
-                        </div>
-                    </div>
+                    <?php 
+                        }
+                    ?>
                 </div>
                 <a href="colletion.php" class="visit-button">
                     VISIT 

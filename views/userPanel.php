@@ -88,7 +88,7 @@
 
 $(document).ready(function() {
     $(".openModal").click(function() {
-        var id = parseInt($(this).data('value'));
+        var id = $(this).data('value');
         $("#myModal #saveChanges").attr("href","?delete=true&id="+id);
         $("#myModal").fadeIn();
         
@@ -110,7 +110,7 @@ $(document).ready(function() {
        
             $id = intval($_GET['id']); 
             $userController->delete($id);
-        
-        
+            
+    
     }
 ?>

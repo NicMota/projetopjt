@@ -149,8 +149,8 @@ class Database
     public function delete($table,$where)
     {
     try {
-        $query = "DELETE FROM ".$table."WHERE ".$where[0]." ".$where['1']." :value;";
-        $this->conn->prepare($query);
+        $query = "DELETE FROM ".$table." WHERE ".$where[0]." ".$where['1']." :value;";
+        $stmt = $this->conn->prepare($query);
         if(gettype($where[2]) == 'string' )
             $stmt->bindParam(':value',$where[2],PDO::PARAM_STR);
         if(gettype($where[2]) == 'integer')
@@ -159,7 +159,7 @@ class Database
         return $stmt->execute();
             
     } catch (PDOException $err) {
-        echo $e->getMessage();
+        echo $err->getMessage();
         return false;
     }
      
