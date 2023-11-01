@@ -28,8 +28,7 @@ class UserController
         try {
             if($this->userModel->edit($id,$newUser,$newName,$newRole))
             {   
-                
-                header("Refresh: 1");
+
                 return true;
             }else
             {

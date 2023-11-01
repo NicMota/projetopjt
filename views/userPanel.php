@@ -110,7 +110,7 @@ $(document).ready(function() {
        
             $id = intval($_GET['id']); 
             $userController->delete($id);
-            
+            header("Location: ./userPanel.php");
     
     }
 ?>
