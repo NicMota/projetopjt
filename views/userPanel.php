@@ -107,10 +107,11 @@ $(document).ready(function() {
 <?php
     if(isset($_GET['delete']))
     {   
-       
-            $id = intval($_GET['id']); 
-            $userController->delete($id);
-            header("Location: ./userPanel.php");
-    
+        
+        $id = intval($_GET['id']); 
+        $userController->delete($id);
+
+        header("Refresh: 0; url=./userPanel.php");
+
     }
 ?>
