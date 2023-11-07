@@ -75,3 +75,6 @@
 
    </script>
 </body>
+<?php
+    include_once './inc/footer_inc.php';
+?>
