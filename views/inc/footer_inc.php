@@ -1,6 +1,7 @@
 
 <footer class='footer'>
     <div class="links">
+<<<<<<< HEAD
         <a href="index.php">
             home
         </a>
@@ -30,6 +31,13 @@
     </div>
   
 
+=======
+        <a href="aboutus.php" id="link">about us</a>
+    </div>
+    <div class="sponsors">
+
+    </div>
+>>>>>>> origin/main
 </footer>
 
 </html>

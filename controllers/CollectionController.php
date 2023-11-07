@@ -9,7 +9,7 @@ class CollectionController
     }
     public function index()
     {
-        return $this->collectionModel->getAllItems();
+        return $this->collectionModel->getItems();
     }
     public function addItem($name,$author,$imageName)
     {

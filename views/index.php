@@ -23,7 +23,7 @@
                     <div class="exhibition-content">
                         
                     </div>
-                    <a href = ''class='exhibition-button'>
+                    <a href ='monalisa.php'class='exhibition-button'>
                         access
                     </a>
                 </div>
@@ -63,7 +63,7 @@
                     ?>
                     </div>
                 </div>
-                <a href="colletion.php" class="visit-button">
+                <a href="collection.php" class="visit-button">
                     VISIT 
                 </a>
             </div>
@@ -73,8 +73,15 @@
         
     </div>
 
+<<<<<<< HEAD
 
 </body>
 <?php 
         include './inc/footer_inc.php';
+=======
+   </script>
+</body>
+<?php
+    include_once './inc/footer_inc.php';
+>>>>>>> origin/main
 ?>
