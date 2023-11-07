@@ -15,3 +15,7 @@ include_once("inc/header_inc.php");
 
     </div>
 </body>
+
+<?php 
+        include './inc/footer_inc.php';
+?>

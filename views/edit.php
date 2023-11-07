@@ -76,4 +76,6 @@
     }
     
 ?>
-</body>
+<?php 
+        include './inc/footer_inc.php';
+?>

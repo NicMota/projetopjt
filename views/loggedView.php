@@ -14,4 +14,6 @@
         YOU ARE LOGGED!!!
     </h1>
 </body>
-</html>
+<?php 
+        include './inc/footer_inc.php';
+?>

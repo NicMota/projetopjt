@@ -52,3 +52,6 @@ include_once 'inc/header_inc.php';
    
     
 </body>
+<?php 
+        include './inc/footer_inc.php';
+?>

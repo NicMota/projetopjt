@@ -115,3 +115,6 @@ $(document).ready(function() {
 
     }
 ?>
+<?php 
+        include './inc/footer_inc.php';
+?>

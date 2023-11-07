@@ -19,7 +19,9 @@
     
     </div>
 </body>
-</html>
+<?php 
+        include './inc/footer_inc.php';
+?>
 
 <?php
 

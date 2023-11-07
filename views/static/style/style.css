@@ -7,12 +7,10 @@
 }
 body
 {
-  
-   background-image: url(../images/background_image.jpg);
-   background-size:cover;
-   overflow:auto;
-   
+   height: 100vh;
+   background-color: rgb(255, 50, 50);
 }
+
 /* Navbar css */
 .navbar
 {  
@@ -66,7 +64,7 @@ body
 {
    background-color: rgb(255, 255, 255);
    width:fit-content;
-   height:100%;
+   height:fit-content;
    margin:5%   auto;
    padding: 10px;
    border-radius: 5px;
@@ -88,7 +86,7 @@ body
    font-weight: bold;
    font-size: large;
 }
-.form-card input
+.form-card input,textarea
 {
    padding:5px;
    font-size: 25px;
@@ -97,6 +95,12 @@ body
    outline: none;
    margin: 10px;
 }
+.form-card textarea
+{
+   background-color: #dad8d876;
+   height: 300px;
+}
+
 .form-card .dragImage
 {
    text-align: center;
@@ -120,7 +124,6 @@ body
       background-color:rgba(133, 133, 255, 0.541);
       border: none;
       border-bottom: 1px solid black;
-      
       font-size: 20px;
       cursor:pointer;
 }
@@ -205,7 +208,7 @@ body
 .content
 {
    margin: 15px auto;
-
+   
    width:90%;
    height: 100%;
   
@@ -432,3 +435,52 @@ body
    text-align: center;
 }
 
+.footer
+{  
+   
+   display: flex;
+   background-color: rgba(0, 0, 0, 0.504);
+   width: 100%;
+   height: 300px;
+}
+.sponsors
+{  
+
+   width: 70%;
+   height: 100%;
+   overflow: hidden;
+   display: flex;
+ 
+}
+.sponsor-card
+{  
+
+   margin: 0 auto;
+   width: fit-content;
+   height:100%;
+   
+}
+.sponsor-card img
+{  
+   width: auto;
+   height: 100%;
+
+}
+.links
+{
+
+   
+   
+}
+.links a
+{  
+   font-size: 2em;
+   display: block;
+   margin: 30px;
+   text-decoration: none;
+   color: white;
+}
+.links a:hover
+{
+   color:rgb(214, 176, 42)
+}

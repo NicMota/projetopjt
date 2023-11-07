@@ -25,3 +25,6 @@ foreach ($collectionItems as $item)
 ?>
     </div>
 </body>
+<?php 
+        include './inc/footer_inc.php';
+?>

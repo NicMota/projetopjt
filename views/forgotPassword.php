@@ -14,6 +14,9 @@
 
     
 </body>
+<?php 
+        include './inc/footer_inc.php';
+?>
 <?php
     if(isset($_POST['submit']))
     {

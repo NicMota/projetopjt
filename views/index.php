@@ -5,7 +5,7 @@
     $collection = $collectionController->index();
 ?>
 <body>
-  
+
     <div class="content">
 
         <div class='top-content'>
@@ -61,6 +61,7 @@
                     <?php 
                         }
                     ?>
+                    </div>
                 </div>
                 <a href="colletion.php" class="visit-button">
                     VISIT 
@@ -71,7 +72,9 @@
 
         
     </div>
-   <script src='./static/js/usersHome.js'>
 
-   </script>
+
 </body>
+<?php 
+        include './inc/footer_inc.php';
+?>
