@@ -89,6 +89,7 @@ class User
             if(password_verify($password,$userArray["pass"]))
             {
                 session_start();
+                $_SESSION['id'] = $userArray['id'];
                 $_SESSION["user"] = $userArray["user"];     
                 $_SESSION["role"] = $userArray["admin"];          
                 return true;

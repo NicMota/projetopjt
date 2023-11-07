@@ -9,7 +9,7 @@ class Collection
         $this->db =new Database();
     }
 
-    public function getAllItems()
+    public function getItems()
     {
         return $this->db->select('collection',['name','author','imageName']);
     }

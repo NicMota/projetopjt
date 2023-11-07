@@ -23,7 +23,7 @@
                     <div class="exhibition-content">
                         
                     </div>
-                    <a href = ''class='exhibition-button'>
+                    <a href ='monalisa.php'class='exhibition-button'>
                         access
                     </a>
                 </div>
@@ -62,7 +62,7 @@
                         }
                     ?>
                 </div>
-                <a href="colletion.php" class="visit-button">
+                <a href="collection.php" class="visit-button">
                     VISIT 
                 </a>
             </div>
