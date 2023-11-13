@@ -15,9 +15,7 @@
             <img src="./static/images/museum.jpg" id='image-museum'>
         </div>
         <div class="middle-content">
-            <h1 id='exhibition-text'>
-                    IN EXHIBITION
-            </h1>
+            
             <div class="exhibition">
                 <div class="exhibition-card"> 
                     <div class="exhibition-content">
@@ -44,6 +42,7 @@
                     </a>
                 </div>
             </div>
+            </div>
             <div class="collection">
                 <h1>
                     OUR COLLECTION
@@ -56,7 +55,7 @@
                         {
                         ?>
                         <div class="collection-item ">          
-                            <img src=<?php echo "./static/images/".$item['imageName']; ?>  alt="">   
+                            <img src=<?php echo "./static/images/collection/".$item['imageName']; ?>  alt="">   
                         </div>
                     <?php 
                         }
@@ -67,7 +66,7 @@
                     VISIT 
                 </a>
             </div>
-        </div>
+        
        
 
         
