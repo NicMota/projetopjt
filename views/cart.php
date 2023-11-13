@@ -19,14 +19,14 @@
            
           
             foreach($tickets as $ticket):    
-        
+            $amount = $_SESSION['cart'][$ticket['id']];
             
         ?>
             <div class="ticket">
-                <h1><?=$ticket['id'];?></h1>    
+                   
                 <h1><?=$ticket['name'];?></h1>            
                 <h1><?= $ticket['desc'] ?></h1>
-                <input type='number' name='amount[]' value='<?= $_SESSION['cart'][$ticket['id']]?>'/>
+                <input type='number' name='amount[]' value='<?= $amount?>' max='<?=$amount?>'/>
 
 
                 <input type="hidden" name="event_id[]" value='<?=$ticket['id']?>'/>

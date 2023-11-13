@@ -90,11 +90,12 @@
           <a href="tickets.php">TICKETS</a>
         </li>
         <li class='link'>
-          <a href="?logout">LOG OUT</a>
-        </li>
-        <li class='link'>
           <a href="userPage.php">USER PAGE</a>
         </li>
+        <li class='link'>
+          <a href="?logout">LOG OUT</a>
+        </li>
+        
       </ul>
     </nav>
 

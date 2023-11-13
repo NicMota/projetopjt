@@ -9,10 +9,10 @@
     <div class="content">
 
         <div class='top-content'>
-            <h1 id='mpas'> 
-                MUSEU PAULO AGOSTINHO SOBRINHO
-            </h1>
-            <img src="./static/images/museum.jpg" id='image-museum'>
+            <div class="museum-img">
+
+            </div>
+            
         </div>
         <div class="middle-content">
             

@@ -15,7 +15,7 @@ foreach ($collectionItems as $item)
 ?>  
     
         <div class="collection-card">
-            <img src="<?php echo './static/images/collection'.$item['imageName']; ?>">
+            <img src="<?php echo './static/images/collection/'.$item['imageName']; ?>">
         </div>
 <?php 
 }
@@ -55,18 +55,18 @@ if(isset($_SESSION['id']))
    
 <?php
 }
+
+    if(isset($_POST['submit']))
+    {   
+        $comment = $_POST['comment'];
+        $userId = $_SESSION['id'];
+
+        $commentController->createComment($comment,$userId);
+        header("location: collection.php");
+    }
+  
 ?>
 <?php
         include 'inc/footer_inc.php'; 
 ?>
  
-<?php
-        if(isset($_POST['submit']))
-        {   
-            $comment = $_POST['comment'];
-            $userId = $_SESSION['id'];
-
-            $commentController->createComment($comment,$userId);
-            header("Location: collection.php");
-        }
-    ?>

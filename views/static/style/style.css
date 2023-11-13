@@ -8,40 +8,36 @@
 }
 body
 {
-  
-   background-image: url(../images/background_image.jpg);
-   background-size: cover;
-   background-repeat: repeat-y;
    min-height: 100vh;
    display: flex;
    flex-direction: column;
-  
-   
-
 }
 
 /* Navbar css */
 .navbar
 {  
+  border-bottom: solid black 2px;
    display: flex;
    height: 60px;
    width: 100%;
-   background-color: rgba(54, 31, 3, 0.384);
+   background-color: #7e916a;
    overflow: hidden;   
 }
 .navbar h1
 {
-   color: white;
+   color: rgb(0, 0, 0);
    margin: auto 10px;
 }
 .navbar ul
 {  
-   margin:auto auto;
- 
+  
+   margin:auto 0;
+   margin-left: auto;
+   padding-right: 30px;
 }
 .navbar .link
 {
-
+   
    display: inline-block;
    width: 100px;
    font-weight: bold;
@@ -56,7 +52,7 @@ body
    display: flex;
    align-items: center;
    justify-content: center;
-   color:rgb(172, 172, 172);
+   color:rgb(0, 0, 0);
    text-decoration: none;
    height: 100%;
    width: 100%;
@@ -71,6 +67,8 @@ body
 }
 .content
 {  
+     
+   background-color: #95AB7D;
    flex:1;
    display: flex;
    flex-direction: column;
@@ -78,8 +76,8 @@ body
    
 }
 .top-content
-{
-   height: 600px; 
+{  
+   height: 600px;
    width: 100%;
    overflow: hidden;
 }
@@ -91,6 +89,18 @@ body
    left: 10%;
    color: white;
    z-index: 100;
+}
+.museum-img
+{  
+
+   width: 100%;
+   height: 100%;
+ 
+   background-image: url(../images/museum.png);
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+   
 }
 .middle-content
 {  
@@ -253,14 +263,7 @@ body
 }
 
 
-#image-museum
-{
-   margin: 0 auto;
-   width: 100%;
-   height: auto;
-   position: relative;
-   top: -200px;
-}
+
 .exhibition
 {  
    width: 100%;
@@ -297,10 +300,14 @@ body
    margin: 0 auto;
    width:fit-content;
    height: fit-content;
-   color: white;
-   background-color: rgb(208, 99, 99);
+   color: rgb(192, 192, 192);
    text-decoration: none;
-   
+   transition:all .5s ease;
+}
+.exhibition-button:hover
+{
+   color: #ffffff;
+	padding-left: 15px;
 }
 .collection
 {
@@ -569,5 +576,19 @@ ul{
 .cart-link a:hover
 {
    background-color: rgb(53, 121, 72);
+}
+.about-us
+{
+   display: flex;
+   
+}
+.abtus-img
+{
+   width: 30%;
+}
+.abtus-img img
+{
+   width: 100%;
+   height: auto;
 }
 

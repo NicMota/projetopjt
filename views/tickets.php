@@ -26,10 +26,11 @@
             ?>
             <button name='submit' type='submit'>comprar </button>
         </form>
+        <div class="cart-link">
+            <a href="cart.php"> CART </a>
+        </div>
     </div>
-    <div class="cart-link">
-        <a href="cart.php"> CART </a>
-    </div>
+    
 
 <?php 
     if(isset($_POST['submit']))
