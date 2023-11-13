@@ -1,7 +1,7 @@
 <?php
 include_once './inc/header_inc.php';
 ?>
-<body>
+
     <div class="content">
         <div class="row1"> 
 
@@ -11,4 +11,7 @@ include_once './inc/header_inc.php';
         
     </div>
     
-</body>
+
+<?php
+include_once './inc/footer_inc.php';
+?>

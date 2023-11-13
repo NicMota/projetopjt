@@ -4,12 +4,12 @@
 <?php
     $collection = $collectionController->index();
 ?>
-<body>
+
 
     <div class="content">
 
         <div class='top-content'>
-            <h1> 
+            <h1 id='mpas'> 
                 MUSEU PAULO AGOSTINHO SOBRINHO
             </h1>
             <img src="./static/images/museum.jpg" id='image-museum'>
@@ -73,15 +73,8 @@
         
     </div>
 
-<<<<<<< HEAD
 
-</body>
+
 <?php 
         include './inc/footer_inc.php';
-=======
-   </script>
-</body>
-<?php
-    include_once './inc/footer_inc.php';
->>>>>>> origin/main
 ?>

@@ -2,19 +2,36 @@
 include_once("inc/header_inc.php");
 
 ?>
+<?php 
+$userId = $_SESSION['id'];
+$user = $userController->findUserById($userId);
+$tickets = $ticketController->getUserTickets($userId);
+?>
 
-<body>
     
-    <div class="user">
-
+    <div class="top-content">
+        <div class="user">
+            <div class="user-card">
+                <h1>
+                    <?=$user['user'];?>
+                </h1>
+            </div>
+        </div>
+       
     </div>
-    <div class="tickets">
-        
+    <div class="middle-content">
+        <div class="tickets">
+            <?php
+                foreach($tickets as $ticket):
+                $event = $ticketController->getEventById($ticket['event_id']);
+            ?>    
+                    <h1><?=$event['name'];?></h1>
+                    <h1>x<?=$ticket['amount'];?></h1>
+            <?php
+                endforeach;
+            ?>
+        </div>
     </div>
-    <div class="related-events">
-
-    </div>
-</body>
 
 <?php 
         include './inc/footer_inc.php';

@@ -2,7 +2,7 @@
     include_once 'inc/header_inc.php';
 ?>
 
-<body>
+
     <div class="form-card">
 
         <form action="" method="post" id='forgotPasswordForm'>
@@ -13,7 +13,7 @@
     </div>
 
     
-</body>
+
 <?php 
         include './inc/footer_inc.php';
 ?>

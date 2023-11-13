@@ -9,11 +9,11 @@
     }
 ?>
 
-<body>
+
     <h1>
         YOU ARE LOGGED!!!
     </h1>
-</body>
+
 <?php 
         include './inc/footer_inc.php';
 ?>

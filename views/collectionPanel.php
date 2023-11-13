@@ -2,7 +2,7 @@
 include_once 'inc/header_inc.php';
 
 ?>
-<body>
+
     <div class="table-card">
         <div class="collection-tab form-card">
             <a href="addCollectionItem.php">Add Item</a>
@@ -25,7 +25,7 @@ include_once 'inc/header_inc.php';
                 
             ?>
 
-                 <tr>
+                <tr>
                     <td> 
                         <div class='img-1'>
                             <img src="<?php echo './static/images/'.$item['imageName']; ?>" alt="">
@@ -43,15 +43,14 @@ include_once 'inc/header_inc.php';
                     <td>
                         <a  href='' class='red-button'>delete</a>
                     </td>
-                 </tr>    
+                </tr>    
             <?php
                 }
             ?>
         </table>
     </div>
    
-    
-</body>
+
 <?php 
         include './inc/footer_inc.php';
 ?>

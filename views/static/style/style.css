@@ -3,12 +3,21 @@
 {
    margin:0;
    padding: 0;
+   box-sizing: border-box;
    font-family: andale mono,monospace;
 }
 body
 {
-   height: 100vh;
-   background-color: rgb(255, 50, 50);
+  
+   background-image: url(../images/background_image.jpg);
+   background-size: cover;
+   background-repeat: repeat-y;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+  
+   
+
 }
 
 /* Navbar css */
@@ -18,9 +27,7 @@ body
    height: 60px;
    width: 100%;
    background-color: rgba(54, 31, 3, 0.384);
-   overflow: hidden;
-
-   
+   overflow: hidden;   
 }
 .navbar h1
 {
@@ -45,21 +52,55 @@ body
 .navbar .link a
 {
 
+   font-size: 1.15em;
    display: flex;
    align-items: center;
    justify-content: center;
-   color:rgb(247, 238, 238);
+   color:rgb(172, 172, 172);
    text-decoration: none;
    height: 100%;
    width: 100%;
+   transition: all 0.5s ease;
   
 }
 .navbar .link a:hover
 {
-   text-decoration: underline solid white 2px;
-   transition: .1s;
+   color: #ffffff;
+	padding-left: 8px;
+  
 }
-
+.content
+{  
+   flex:1;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   
+}
+.top-content
+{
+   height: 600px; 
+   width: 100%;
+   overflow: hidden;
+}
+.top-content #mpas
+{
+   position: absolute;
+   font-size: 7em;
+   top: 40%;
+   left: 10%;
+   color: white;
+   z-index: 100;
+}
+.middle-content
+{  
+   flex: 1;
+   display: flex;
+   width: 100%;
+   height: 100%;
+   font-size: 2em;
+   
+}
 .form-card
 {
    background-color: rgb(255, 255, 255);
@@ -205,39 +246,13 @@ body
    transition: .2s;
    cursor:pointer;
 }
-.content
-{
-   margin: 15px auto;
-   
-   width:90%;
-   height: 100%;
-  
-}
+
 .table-card button
 {
    font-size: 25px;
 }
-.top-content
-{
-   height: 600px; 
-   width: 100%;
-   overflow: hidden;
-}
-.top-content h1
-{
-   position: absolute;
-   font-size: 7em;
-   top: 40%;
-   left: 10%;
-   color: white;
-   z-index: 100;
-}
-.middle-content
-{  
-  
-   width: 100%;
-   font-size: 2em;
-}
+
+
 #image-museum
 {
    margin: 0 auto;
@@ -434,52 +449,110 @@ body
    text-align: center;
 }
 
-.footer
-{  
+
+
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+   padding: 70px 0;
+   margin-top: auto;
    
-   display: flex;
-   background-color: rgba(0, 0, 0, 0.504);
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: rgb(48, 118, 71);
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+.user
+{
    width: 100%;
-   height: 300px;
-}
-.sponsors
-{  
-
-   width: 70%;
    height: 100%;
-   overflow: hidden;
+   background-color: #ffffff;
+}
+.tickets
+{  
+   flex: 1;
    display: flex;
- 
-}
-.sponsor-card
-{  
-
-   margin: 0 auto;
-   width: fit-content;
-   height:100%;
-   
-}
-.sponsor-card img
-{  
-   width: auto;
+   flex-direction: column ;
+   width: 100%;
    height: 100%;
-
-}
-.links
-{
-
-   
+   background-color: #888;
    
 }
-.links a
-{  
-   font-size: 2em;
-   display: block;
-   margin: 30px;
-   text-decoration: none;
-   color: white;
-}
-.links a:hover
-{
-   color:rgb(214, 176, 42)
-}
+
+
+

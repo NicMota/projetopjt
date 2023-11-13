@@ -70,7 +70,7 @@ class UserController
         }
         else
         {
-            echo "Credentials Not Match With Any Register in The System";
+            return false;
         }
         
     }

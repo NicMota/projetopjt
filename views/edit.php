@@ -25,7 +25,7 @@
 
 ?>
 
-<body>
+
     <div class="form-card">
       <form action="" method="post">
        <label for="username">username:</label>

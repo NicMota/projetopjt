@@ -2,7 +2,7 @@
     include_once 'inc/header_inc.php';
 
 ?>
-<body>
+
     
     <div class="form-card">
         <form enctype="multipart/form-data" method="post">
@@ -18,10 +18,16 @@
             <button name='submit' type='submit'> add </button>
         </form>
     </div>
-</body>
+
 <?php 
         include './inc/footer_inc.php';
 ?>
+
+
+
+
+
+
 
 <?php       
   
@@ -36,7 +42,7 @@
    
 
         $itemName = basename($_FILES['itemImage']['name']);
-        $itemPath = './static/images/'.$itemName;
+        $itemPath = './static/images/collection/'.$itemName;
 
       
         $res = move_uploaded_file($_FILES['itemImage']['tmp_name'],$itemPath);

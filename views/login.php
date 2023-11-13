@@ -4,7 +4,7 @@
 
     
 ?>
-<body>
+
     <div class="form-card">
 
         <form action="" method="post">
@@ -18,9 +18,9 @@
         </form>
     
     </div>
-</body>
+
 <?php 
-        include './inc/footer_inc.php';
+        include_once './inc/footer_inc.php';
 ?>
 
 <?php

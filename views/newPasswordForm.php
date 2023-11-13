@@ -2,7 +2,7 @@
     include_once 'inc/header_inc.php';
 ?>
 
-<body>
+
     
     <div class="form-card">
         <form method="post">
@@ -21,8 +21,7 @@
 
     </div>
 
-   
-</body>
+
 <?php 
         include './inc/footer_inc.php';
 ?>
