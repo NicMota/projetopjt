@@ -13,9 +13,15 @@ $collectionItems = $collectionController->index();
 foreach ($collectionItems as $item) 
 {
 ?>  
-    
+
         <div class="collection-card">
-            <img src="<?php echo './static/images/collection/'.$item['imageName']; ?>">
+            <div class="collection-image">
+                <img src="<?php echo './static/images/collection/'.$item['imageName']; ?>">
+            </div>
+            <div class="collection-desc">
+                <h1> <?=$item['name'] ?></h1>
+            </div>
+           
         </div>
 <?php 
 }

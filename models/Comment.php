@@ -10,7 +10,10 @@ class Comment
     }
     public function getComments()
     {
-        return $this->db->select('comments',"*");
+        $stmt = $this->db->conn->prepare('SELECT * FROM comments ORDER BY date_added DESC');
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
         
     }
     public function createComment($comment,$userid)

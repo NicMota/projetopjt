@@ -28,7 +28,7 @@ include_once 'inc/header_inc.php';
                 <tr>
                     <td> 
                         <div class='img-1'>
-                            <img src="<?php echo './static/images/'.$item['imageName']; ?>" alt="">
+                            <img src="<?php echo './static/images/collection/'.$item['imageName']; ?>" alt="">
                         </div>
                     </td>
                     <td>
