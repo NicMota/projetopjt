@@ -20,13 +20,18 @@ $tickets = $ticketController->getUserTickets($userId);
        
     </div>
     <div class="middle-content">
-        <div class="tickets">
+        <div class='user-tickets'>
+            <h1>SEUS INGRESSOS</h1>
             <?php
                 foreach($tickets as $ticket):
                 $event = $ticketController->getEventById($ticket['event_id']);
             ?>    
+                <div class="user-ticket">
                     <h1><?=$event['name'];?></h1>
-                    <h1>x<?=$ticket['amount'];?></h1>
+                    <h1>x<?=$ticket['amount'];?></h1>   
+                    <p><?=$event['date']?></p>
+                </div>
+                    
             <?php
                 endforeach;
             ?>

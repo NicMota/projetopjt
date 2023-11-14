@@ -1,9 +1,25 @@
 <?php
     include_once 'inc/header_inc.php';
 ?>
+<?php 
+    if(isset($_POST['submit']))
+    {
+        if(isset($_SESSION['id']))
+        {   
+            $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            var_dump($data);
+            $user_id = $_SESSION['id'];
+            
+            $ticketController->buyTickets($data['event_id'],$user_id,$data['amount']);
+            
+            header('Location: cart.php');
+        }
+      
+    }
+?>
 
 
-    <div class="cart form-card">
+    <div class="cart">
         <form action="" method="post">
             
         <?php
@@ -26,7 +42,17 @@
                    
                 <h1><?=$ticket['name'];?></h1>            
                 <h1><?= $ticket['desc'] ?></h1>
-                <input type='number' name='amount[]' value='<?= $amount?>' max='<?=$amount?>'/>
+                <select type="number" name='amount[]'>
+                        <?php
+                        for($i = 0; $i<=$amount;$i++):
+                        ?>
+                            <option value='<?=$i?>' selected> 
+                                <?=$i?>
+                            </option>
+                        <?php
+                        endfor;
+                        ?>
+               
 
 
                 <input type="hidden" name="event_id[]" value='<?=$ticket['id']?>'/>
@@ -42,33 +68,20 @@
         }
         ?>
 
-        <h1>price: <?= $subtotal?></h1>
+        
         
         
          
             
-            <button type="submit" name='submit'>buy</button>
+        <div class="cart-link">
+                <button name='submit' type='submit'>comprar </button>
+            </div>
         
         </form>
     </div>
 
 
-<?php 
-    if(isset($_POST['submit']))
-    {
-        if(isset($_SESSION['id']))
-        {   
-            $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-            var_dump($data);
-            $user_id = $_SESSION['id'];
-            
-            $ticketController->buyTickets($data['event_id'],$user_id,$data['amount']);
-            
-            header('Location: cart.php');
-        }
-      
-    }
-?>
+
 <?php
     include_once 'inc/footer_inc.php';
 ?>

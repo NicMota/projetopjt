@@ -19,7 +19,7 @@ class Ticket
             $stmt = $this->db->conn->prepare("SELECT events.*  FROM tickets JOIN events ON ? = events.id");
             $stmt->execute([$event_id]);
 
-            $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $res = $stmt->fetch(PDO::FETCH_ASSOC);
             return $res;
         } catch (PDOException $e) {
             return false;
