@@ -18,4 +18,8 @@ class CommentController
     {
         return $this->commentModel->createComment($comment,$userid);
     }
+    public function getCommentUser($user_id)
+    {
+        return $this->commentModel->getCommentUserByUserId($user_id);
+    }
 }

@@ -13,6 +13,7 @@ class Comment
         $stmt = $this->db->conn->prepare('SELECT * FROM comments ORDER BY date_added DESC');
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
         return $result;
         
     }
@@ -24,6 +25,12 @@ class Comment
         else
             return false;
     }
-
+    public function getCommentUserByUserId($user_id)
+    {
+        $stmt = $this->db->conn->prepare("SELECT users.* FROM comments JOIN users ON ? = users.id");
+        $stmt->execute([$user_id]);
+        $res = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $res;
+    }
 
 }

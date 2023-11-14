@@ -3,7 +3,7 @@
     include_once 'inc/header_inc.php';
 ?>
 
-    <div class="tickets form-card">
+    <div class="tickets">
         <form action=""method='post'>
             <?php 
             $events = $eventController->index();
@@ -17,7 +17,17 @@
                     <div class="ticket">
                         <h1 ><?=$ticket['name']?></h1>
                         <input type="hidden" name="product_id[]" value='<?=$ticket['id']?>'/>
-                        <input type="number" name="product_qnt[]" min='0' max='<?=$disponible;?>'/>
+                        <select type="number" name="product_qnt[]" '>
+                        <?php
+                        for($i = 0; $i<=$disponible;$i++):
+                        ?>
+                            <option value='<?=$i?>'> 
+                                <?=$i?>
+                            </option>
+                        <?php
+                        endfor;
+                        ?>
+                        </select>
                         <h3> disponible:x<?=$disponible?></h3>
                     </div>
             <?php
@@ -36,6 +46,7 @@
     if(isset($_POST['submit']))
     {  
         $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        $bought = false;
         foreach( $data['product_id' ] as $key => $product_id )
         {   
             $product_id = intval($product_id);
@@ -43,9 +54,18 @@
             if($quantity>0)
             {
                 $ticketController->addToCart($product_id,$quantity);
-            }      
+                $bought = true;
+                
+            }
         }
-        header('Location: tickets.php' );
+        if($bought)
+        {
+            header('Location: cart.php' );
+        }else
+        {
+            header('Location: tickets.php');
+        }
+        
     }
 
    

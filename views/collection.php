@@ -31,47 +31,61 @@ foreach ($collectionItems as $item)
 if(isset($_SESSION['id']))
 {
 ?>
-    <div class="comments">
-        <div class="form-card">
+    <div class="comment-form">
             <form action="" method="post">
-                <label for="comment">comment:</label>
-                <textarea name="comment"  cols="80" rows="10"></textarea>
-                <button name='submit' type="submit">send</button>
+                <label for="comment">COMENTE AQUI!</label>
+                <textarea name="comment"  cols="60" rows="5"></textarea>
+                <button name='submit' type="submit">COMENTAR</button>
             </form>
-        </div>
     </div>
 
-    <div class="comments">
-        <?php
-        $comments = $commentController->index();
-        foreach($comments as $comment)
-        {
-        ?>
+    <?php
 
-                <h1>
-                    <?php 
-                        echo $comment['commentContent'];
-                    ?>
-                </h1>
-            
-        <?php
-        }
-        ?>
-    </div>
-   
-<?php
-}
 
-    if(isset($_POST['submit']))
+    if(isset($_POST['submit']) && isset($_POST['comment']))
     {   
         $comment = $_POST['comment'];
         $userId = $_SESSION['id'];
 
-        $commentController->createComment($comment,$userId);
-        header("location: collection.php");
+        if($commentController->createComment($comment,$userId) != false)
+        header("Location: collection.php");
+        exit;
+        
     }
   
+    ?>
+    <div class="comments">
+        <h1>
+            COMENTARIOS
+        </h1>
+        <?php
+        $comments = $commentController->index();
+        foreach($comments as $comment)
+        {
+            $user = $commentController->getCommentUser($comment['user_id']);
+            
+        ?>  
+            <div class="comment-card">
+                <h1>
+                    <?=$user['name'];?>
+                </h1>
+                <p>    
+                    <?=$comment['commentContent'];?>
+                </p>
+                <h3>
+                    <?=$comment['date_added'];?>
+                </h3>
+                
+            </div>
+                
+            
+<?php
+        }
+}
 ?>
+    </div>
+   
+
 <?php
         include 'inc/footer_inc.php'; 
 ?>
