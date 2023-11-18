@@ -15,7 +15,8 @@ class User
     }
     public function findUserById(int $id)
     {
-        $res = $this->db->select("users",["user","name","admin"],['id','=',$id]);
+        $res = $this->db->select("users",'*',['id','=',$id]);
+        #mudou o *
         if($res != [])
         {
             return $res[0];

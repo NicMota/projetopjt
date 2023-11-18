@@ -31,6 +31,9 @@ foreach ($collectionItems as $item)
 if(isset($_SESSION['id']))
 {
 ?>
+<div class="bottom-content comments-section">
+#asdasd
+
     <div class="comment-form">
             <form action="" method="post">
                 <label for="comment">COMENTE AQUI!</label>
@@ -83,8 +86,8 @@ if(isset($_SESSION['id']))
         }
 }
 ?>
-    </div>
-   
+    </div> 
+</div>   
 
 <?php
         include 'inc/footer_inc.php'; 

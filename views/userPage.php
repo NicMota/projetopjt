@@ -12,9 +12,18 @@ $tickets = $ticketController->getUserTickets($userId);
     <div class="top-content">
         <div class="user">
             <div class="user-card">
-                <h1>
-                    <?=$user['user'];?>
-                </h1>
+                <p>
+                    User:<?=$user['user'];?>
+                </p>
+                <p>
+                    Name:<?=$user['name'];?>
+                </p>
+                <p>
+                    Phone:<?=$user['phone'];?>
+                </p>
+                <p>
+                    <a href="">editar informações</a>
+                </p>#asd
             </div>
         </div>
        
@@ -37,6 +46,7 @@ $tickets = $ticketController->getUserTickets($userId);
             ?>
         </div>
     </div>
+  
 
 <?php 
         include './inc/footer_inc.php';
