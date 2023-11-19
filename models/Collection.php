@@ -50,5 +50,14 @@ class Collection
             return false;
         }
     }
+    public function edit($data)
+    {
+        try {
+            $stmt = $this->db->conn->prepare("UPDATE collection SET `name`=?,`author`=?,`imageName`=? WHERE `id`=?");
+            return $stmt->execute([$data['name'],$data['author'],$data['itemImage'],$data['id']]);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
     
 }

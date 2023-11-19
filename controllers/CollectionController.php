@@ -24,4 +24,8 @@ class CollectionController
     {
         return $this->collectionModel->findItemById($id);
     }
+    public function editItem($data)
+    {
+        return $this->collectionModel->edit($data);
+    }
 }

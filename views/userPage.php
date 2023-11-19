@@ -33,7 +33,9 @@ $tickets = $ticketController->getUserTickets($userId);
             <h1>SEUS INGRESSOS</h1>
             <?php
                 foreach($tickets as $ticket):
-                $event = $ticketController->getEventById($ticket['event_id']);
+                    if($ticketController->getEventById($ticket['event_id'])):
+                        $event = $ticketController->getEventById($ticket['event_id']);
+                
             ?>    
                 <div class="user-ticket">
                     <h1><?=$event['name'];?></h1>
@@ -41,7 +43,8 @@ $tickets = $ticketController->getUserTickets($userId);
                     <p><?=$event['date']?></p>
                 </div>
                     
-            <?php
+            <?php   
+                    endif;
                 endforeach;
             ?>
         </div>

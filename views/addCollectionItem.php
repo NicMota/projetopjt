@@ -18,7 +18,7 @@
             <button name='submit' type='submit'> add </button>
         </form>
     </div>
-</body>
+</body> 
 
 <?php       
   
@@ -33,8 +33,8 @@
    
 
         $itemName = basename($_FILES['itemImage']['name']);
-        $itemPath = './static/images/'.$itemName;
-
+        $itemPath = './static/images/collection/'.$itemName;
+        
       
         $res = move_uploaded_file($_FILES['itemImage']['tmp_name'],$itemPath);
         if($res)
