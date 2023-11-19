@@ -9,7 +9,7 @@
         'date' => '',
         'tickets_amnt' => ''
       ];
-      
+      $id = '';
       if(isset($_GET['id']))
       {
         $id = $_GET['id'];
@@ -37,7 +37,7 @@
 
     <div class="form-card">
       <form action="" method="post">
-        
+        <input type="hidden" name="id" value='<?=$id;?>'>
         <label for="">name:</label>
         <input type="text" name="name" id="" value="<?=$event['name'];?> ">
         <label for="desc">desc:</label>
@@ -58,11 +58,12 @@
 <?php
     if(isset($_POST['submit']))
     {
-        $userEdit = $_POST['userEdit'];
-        $nameEdit = $_POST['nameEdit'];
-        $roleEdit = intval($_POST['roleEdit']);
-        $userController->editUser($id,$userEdit,$nameEdit,$roleEdit);
-        header("Location: ./edit.php");
+        $data = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        if($eventController->editEvent($data))
+        {
+          header("Location: eventPanel.php");
+        };
+        
 
     }
     

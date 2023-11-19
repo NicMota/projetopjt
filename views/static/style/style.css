@@ -153,6 +153,8 @@ body
 {
    padding:5px;
    font-size: 25px;
+   width: 100%;
+   
    border:none;
    border-bottom: thick solid rgb(197, 253, 152);
    outline: none;

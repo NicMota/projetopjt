@@ -55,7 +55,7 @@ if(isset($_GET['delete']))
                     <button data-value='<?=$event['id']?>' class='red-button openModal'>deletar</button>
                 </td>
             </tr>    
-
+            
         <?php 
         endforeach;
         ?>

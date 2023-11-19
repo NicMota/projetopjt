@@ -20,4 +20,8 @@ class CollectionController
     {
         return $this->collectionModel->delete($id);
     }
+    public function getItemById($id)
+    {
+        return $this->collectionModel->findItemById($id);
+    }
 }

@@ -70,7 +70,7 @@
         $nameEdit = $_POST['nameEdit'];
         $roleEdit = intval($_POST['roleEdit']);
         $userController->editUser($id,$userEdit,$nameEdit,$roleEdit);
-        header("Location: ./edit.php");
+        header("Location: userPanel.php");
          
         
     }

@@ -28,4 +28,8 @@ class EventController
     {
         return $this->eventModel->findEventById($id);
     }
+    public function editEvent($data)
+    {
+        return $this->eventModel->edit($data);
+    }
 }

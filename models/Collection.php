@@ -8,7 +8,17 @@ class Collection
     {
         $this->db =new Database();
     }
-
+    public function findItemById($id)
+    {
+        try {
+            $stmt = $this->db->conn->prepare("SELECT * FROM collection WHERE id=?");
+            $stmt->execute([$id]);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
     public function getItems()
     {
        try {

@@ -9,7 +9,7 @@ if(isset($_GET['delete']))
     $id = intval($_GET['id']); 
     $collectionController->delete($id);
 
-    header("Location: eventPanel.php");
+    header("Location: collectionPanel.php");
 
 }
 ?>   
@@ -48,7 +48,7 @@ if(isset($_GET['delete']))
                         <?php echo $item['author']; ?>
                     </td>
                     <td>
-                        <a href='' class='yellow-button'>edit</a>
+                        <a href='collectionEdit.php?id=<?=$item['id']?>' class='yellow-button'>edit</a>
                     </td>
                     <td>
                         <button     class='red-button openModal' data-value='<?=$item['id']?>'>delete</button>

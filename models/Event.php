@@ -63,4 +63,15 @@ class Event
             return false;
         }
     }
+    public function edit($data)
+    { 
+        try {
+            $stmt = $this->db->conn->prepare("UPDATE events SET `name`=?,`desc`=?,`date`=?,`tickets_amnt`=? WHERE `id`=?");
+            return $stmt->execute([$data['name'],$data['desc'],$data['date'],$data['tickets_amnt'],$data['id']]);
+
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
 }
