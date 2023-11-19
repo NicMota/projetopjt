@@ -20,4 +20,12 @@ class EventController
     {
         return $this->eventModel->createEvent($data);
     }
+    public function delete($id)
+    {
+        return $this->eventModel->delete($id);
+    }
+    public function getEventById($id)
+    {
+        return $this->eventModel->findEventById($id);
+    }
 }

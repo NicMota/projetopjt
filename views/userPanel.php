@@ -25,15 +25,7 @@
 
 
     
-        <div id="myModal" class="modal">
-                            <div class="modal-content">
-                                <span class="close">&times;</span>
-                                <h2>Are You Sure You Want To Delete This User?</h2>
-                            
-                                <a class="red-button" id="saveChanges" >Delete</a>
-                                <button class='yellow-button' id="closeModal">Cancel </button>
-                            </div>
-                        </div>
+     
         <div class="table-card">
             <table>
                 <tr>
@@ -70,7 +62,7 @@
                             <td><?php echo $u['user'];?> </td> 
                             <td><?php echo $u['email'] ;?></td> 
                             <td><?php echo $role; ?></td>
-                            <td><a href="edit.php?id=<?php echo $u['id'] ?>" class="yellow-button">edit</a> </td>
+                            <td><a href="userEdit.php?id=<?php echo $u['id'] ?>" class="yellow-button">edit</a> </td>
                             <td><button id="deleteButton" class="red-button openModal" data-value="<?php echo $u['id'];?>" >delete</button>  </td> 
                         </tr>
                     
@@ -83,26 +75,7 @@
   
 
 </html>
-<script>
 
-
-$(document).ready(function() {
-    $(".openModal").click(function() {
-        var id = $(this).data('value');
-        $("#myModal #saveChanges").attr("href","?delete=true&id="+id);
-        $("#myModal").fadeIn();
-        
-    });
-
-    $("#closeModal").click(function() {
-        $("#myModal").fadeOut();
-    });
-
-   
-});
-
-
-</script>
 
 <?php
     if(isset($_GET['delete']))

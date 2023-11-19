@@ -16,7 +16,7 @@ body
 /* Navbar css */
 .navbar
 {  
-  border-bottom: solid black 2px;
+   border-bottom: solid black 2px;
    display: flex;
    height: 70px;
    width: 100%;
@@ -38,7 +38,7 @@ body
 }
 .navbar .link
 {
-   
+   margin-right: 6px;
    display: inline-block;
    width: 100px;
    font-weight: bold;
@@ -216,20 +216,37 @@ body
 .table-card
 {
    margin: 5% auto;
-  
-   background-color: rgb(27, 68, 65);
+   display: flex;
+   flex-direction: column;
+   background-color: rgb(255, 255, 255);
    width: fit-content;
    height: 100%;
-   border: 2px rgb(255, 145, 0) solid;
+   border: 2px rgb(0, 0, 0) solid;
    padding: 15px;
    border-radius: 15px;
    
+}
+.table-card>a
+{
+   color: rgb(52, 61, 244);
+   margin: 0 auto;
+   font-size: 1.6em;
+   text-decoration: none;
+   transition: all .5s ease;
+
+}
+.table-card>a:hover
+{  
+  color:black;
+  padding-left: 10px;
+  border-bottom: solid #24262b thin;
+
 }
 .table-card table
 {
    margin:10px;
    text-align: center;
-   color:rgb(255, 174, 0);
+   color:rgb(80, 146, 138);
    font-size: 25px;
    border-spacing: 30px 10px;
 }
@@ -240,9 +257,9 @@ body
 .yellow-button
 {
    text-decoration: none;
-   color:rgb(54, 51, 0);
+   color:rgb(197, 247, 254);
    font-weight: bold;
-   background-color:rgb(255, 255, 176); ;
+   background-color:rgb(31, 117, 105); ;
    border: 2px solid rgb(39, 39, 39);
    font-size: 25px;
    padding: 2px;
@@ -250,26 +267,27 @@ body
 
 .yellow-button:hover
 {
-   background-color:rgb(39, 39, 39);
-   color:rgb(255, 255, 176); 
+   background-color:rgb(197, 247, 254);
+   color:rgb(31, 117, 105); ;
    transition: .2s;
    cursor:pointer;
 }
-.red-button
+.red-button 
 {
    text-decoration: none;
    color:rgb(59, 3, 3);
    font-weight: bold;
-   background-color:rgb(253, 135, 106); 
+   background-color:rgb(253, 113, 106); 
    border: 2px solid rgb(59, 3, 3);
    font-size: 25px;
    padding: 2px;
+   
 }
 .red-button:hover
 {
    background-color:rgb(59, 3, 3);
    color:rgb(253, 135, 106); 
-   transition: .2s;
+   transition: .3s ease;
    cursor:pointer;
 }
 
@@ -610,12 +628,10 @@ ul{
    width: 30vw;
    margin:  auto auto;
    
-}#asd
+}
 .user-card p
 {
    font-size: 2em;
-  
-   
 }
 
 .cart-link
@@ -850,10 +866,10 @@ ul{
 
 .user-ticket
 {
-      margin: 15px 0;
-      border: solid black thin;
-      padding: 15px;
-      background-color: #e8ffd0;
-      border-radius: 5px;
-      width: 30vw;
+   margin: 15px 0;
+   border: solid black thin;
+   padding: 15px;
+   background-color: #e8ffd0;
+   border-radius: 5px;
+   width: 30vw;
 }

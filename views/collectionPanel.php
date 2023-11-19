@@ -2,18 +2,28 @@
 include_once 'inc/header_inc.php';
 
 ?>
+<?php
+if(isset($_GET['delete']))
+{   
+    
+    $id = intval($_GET['id']); 
+    $collectionController->delete($id);
+
+    header("Location: eventPanel.php");
+
+}
+?>   
 
     <div class="table-card">
-        <div class="collection-tab form-card">
-            <a href="addCollectionItem.php">Add Item</a>
-        </div>
+            <a href="addCollectionItem.php">Adidionar Obra</a>
+     
 
         <table>
             <thead>
                 <tr>
                     <th>img:</th>
-                    <th>name</th>
-                    <th>author</th>
+                    <th>nome:</th>
+                    <th>autor:</th>
                 </tr>
             </thead>
             <?php
@@ -41,7 +51,7 @@ include_once 'inc/header_inc.php';
                         <a href='' class='yellow-button'>edit</a>
                     </td>
                     <td>
-                        <a  href='' class='red-button'>delete</a>
+                        <button     class='red-button openModal' data-value='<?=$item['id']?>'>delete</button>
                     </td>
                 </tr>    
             <?php

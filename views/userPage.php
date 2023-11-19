@@ -23,7 +23,7 @@ $tickets = $ticketController->getUserTickets($userId);
                 </p>
                 <p>
                     <a href="">editar informações</a>
-                </p>#asd
+                </p>
             </div>
         </div>
        

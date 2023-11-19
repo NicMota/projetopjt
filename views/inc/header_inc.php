@@ -33,6 +33,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./static/style/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./static/js/query.js"></script>
 </head>
 
 <?php 
@@ -143,3 +144,12 @@
   
 ?>
 <div class="content">
+<div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Você tem certeza que deseja deletar?<h2>
+        
+            <a class="red-button" id="saveChanges" >Deletar</a>
+            <button class='yellow-button' id="closeModal">Cancelar </button>
+        </div>
+</div>

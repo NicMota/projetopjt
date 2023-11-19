@@ -13,7 +13,11 @@ class CollectionController
     }
     public function addItem($name,$author,$imageName)
     {
-      $this->collectionModel->addItem($name,$author,$imageName);
+      return $this->collectionModel->addItem($name,$author,$imageName);
       
+    }
+    public function delete($id)
+    {
+        return $this->collectionModel->delete($id);
     }
 }

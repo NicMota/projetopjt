@@ -5,17 +5,31 @@
 <?php
 $events = $eventController->index();
 ?>
+
+<?php
+if(isset($_GET['delete']))
+{   
+    
+    $id = intval($_GET['id']); 
+    $eventController->delete($id);
+
+    header("Location: collectionPanel.php");
+
+}
+?>   
+
+
 <div class="table-card">
     
-    <a href="createEvent.php">Create Event</a>
+    <a href="createEvent.php">Criar Evento</a>
     
     <table>
         <thead>
             <tr>
-                <th>name:</th>
+                <th>nome:</th>
                 <th>desc:</th>
-                <th>date:</th>
-                <th>tickets_amnt:</th>
+                <th>data:</th>
+                <th>quantidade <br> de ingressos:</th>
             </tr>
         </thead>
         <?php
@@ -35,17 +49,17 @@ $events = $eventController->index();
                     <?=$event['tickets_amnt']?>
                 </td>
                 <td>
-                    <a href='' class='yellow-button'>edit</a>
+                    <a href='eventEdit.php?id=<?=$event['id']?>' class='yellow-button'>editar</a>
                 </td>
                 <td>
-                    <a  href='' class='red-button'>delete</a>
+                    <button data-value='<?=$event['id']?>' class='red-button openModal'>deletar</button>
                 </td>
             </tr>    
 
         <?php 
         endforeach;
         ?>
-    </table>
+</table>
 </div>
 <?php
     include_once 'inc/footer_inc.php';

@@ -41,4 +41,26 @@ class Event
             echo $e->getMessage();
         }
     }
+    public function delete($id)
+    {
+        try {
+            $stmt = $this->db->conn->prepare("DELETE FROM events WHERE id=?");
+            return $stmt->execute([$id]);       
+         } catch (PDOException $e) {
+           echo $e->getMessage();
+           return false;
+        }
+    }
+    public function findEventById($id)
+    {
+        try {
+            $stmt = $this->db->conn->prepare("SELECT * FROM events WHERE id=?");
+            $stmt->execute([$id]);
+           
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
 }
