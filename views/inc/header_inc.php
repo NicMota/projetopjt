@@ -31,7 +31,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./static/style/style.scss">
+    <link rel="stylesheet"  href="./static/style/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./static/js/query.js"></script>
 </head>
@@ -82,16 +82,16 @@
           <a href="index.php">HOME</a>
         </li>
         <li class='link'>
-          <a href="visit.php">VISIT</a>
+          <a href="visit.php">VISITAR</a>
         </li>
         <li class='link'> 
-          <a href="whatson.php">WHAT'S ON</a>
+          <a href="whatson.php">NOVIDADES</a>
         </li>
         <li class='link'>
-          <a href="tickets.php">TICKETS</a>
+          <a href="tickets.php">INGRESSOS</a>
         </li>
         <li class='link'>
-          <a href="userPage.php">USER PAGE</a>
+          <a href="userPage.php">ÁREA DO USUÁRIO</a>
         </li>
         <li class='link'>
           <a href="?logout">LOG OUT</a>
@@ -126,7 +126,7 @@
           <a href="eventPanel.php">EVENTS PANEL</a>
         </li>
         <li class='link'>
-          <a href="userPage.php">USER PAGE</a>
+          <a href="userPage.php">Area do Usuário</a>
         </li>
         <li class='link'>
           <a href="?logout">LOG OUT</a>

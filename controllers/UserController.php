@@ -88,5 +88,9 @@ class UserController
       
         return $this->userModel->delete($id);
     }
+    public function edit($data)
+    {
+        return $this->userModel->editUser($data);
+    }
 }
 

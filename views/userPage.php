@@ -12,18 +12,30 @@ $tickets = $ticketController->getUserTickets($userId);
     <div class="top-content">
         <div class="user">
             <div class="user-card">
-                <p>
-                    User:<?=$user['user'];?>
-                </p>
-                <p>
-                    Name:<?=$user['name'];?>
-                </p>
-                <p>
-                    Phone:<?=$user['phone'];?>
-                </p>
-                <p>
-                    <a href="">editar informações</a>
-                </p>
+                <div class="info">
+                    <p>
+                        Usuário:<?=$user['user'];?>
+                    </p>
+                    <p>
+                        Nome:<?=$user['name'];?>
+                    </p>
+                    <p>
+                        Telefone:<?=$user['phone'];?>
+                    </p>
+                    <p>
+                        Email:<?=$user['email'];?>
+                    </p>
+                </div>
+                <div class="links">
+            
+                    <a href="tickets.php" class='yellow-button'>comprar ingressos</a>
+
+                    <a href="passwordEdit.php" class='yellow-button'>trocar senha</a>
+             
+                    <a href="edit.php?id=<?=$user['id']?>" class="yellow-button">editar informações</a>
+              
+                </div>
+                
             </div>
         </div>
        

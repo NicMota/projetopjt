@@ -7,7 +7,7 @@
    font-family: andale mono,monospace;
 }
 body
-{
+{  
    min-height: 100vh;
    display: flex;
    flex-direction: column;
@@ -93,9 +93,8 @@ body
 .museum-img
 {  
 
-   width: 100%;
-   height: 100%;
- 
+   width: 100vw;
+   height: 70vh;
    background-image: url(../images/museum.png);
    background-size: contain;
    background-repeat: no-repeat;
@@ -257,7 +256,9 @@ body
    border-bottom: 2px solid rgb(0, 0, 0);
 }
 .yellow-button
-{
+{  
+  
+
    text-decoration: none;
    color:rgb(197, 247, 254);
    font-weight: bold;
@@ -367,30 +368,8 @@ body
    color:rgb(2, 2, 2);
    font-size: 3.8em;
 }
-.collection-item
-{  
-  
-   display: flex;
-   
 
-   width: fit-content;
-   height: 500px;
-   margin: 10px;
- 
-   
-}
-.collection-item img
-{
-   min-width: 100%;
-   min-height: 100%;
-}
-@mixin white-gradient {
-	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-}
-.active
-{
-   animation: moveElement 40s linear infinite;
-}
+
 @keyframes moveElement {
    0% { transform: translateX(0); }
 	100% { transform: translateX(calc(-250px * 7))}
@@ -400,45 +379,39 @@ body
 {  
   
    
-   width: 960px;
+   width: 100em;
    height: fit-content;
   
    position:relative;
    overflow: hidden;
    
    margin: 30px auto;
-   &::before,
-   &::after
-   {
-      background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-      content: "";
-      position: absolute;
-      height: fit-content;
-      z-index: 2;
-      width: 400px;
-   }
-   &::after
-   {
-      right: 0;
-      top:0;
-      transform:rotateZ('180deg');
-   }
-   &::before
-{
-   left: 0;
-	top: 0;
-}
 }
 
 
 
+
+
+  
 
 .slider-row
 {  
-   
+   animation: moveElement 40s linear infinite;
    display: flex;
    width: calc(250px*14);
 
+}
+.collection-item
+{  
+display: flex;
+width: fit-content;
+height: 500px;
+margin: 10px;
+}
+.collection-item img
+{
+min-width: 100%;
+min-height: 100%;
 }
 .visit-button
 { 
@@ -639,24 +612,40 @@ ul{
 
 .user
 {  
-   background-color: #58644a;
+   background-color: #dff7c2;
    display: flex;
+   min-height: 40vh;
    flex:1;
    flex-direction: column;
 }
 .user-card
 {
-   background-color:#95AB7D;
- 
-   width: 30vw;
+   background-color:#ffffff;
+   border: solid rgb(0, 153, 255) thin;
+   padding: 10px;
+   width: fit-content;
+   
+   display: flex;
    margin:  auto auto;
    
 }
-.user-card p
+.user-card .info
 {
    font-size: 2em;
+   margin-right: 30px;
 }
-
+.user-card .links
+{  
+   margin-left: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   font-size: 1.5em;
+}
+.user-card .links>a
+{
+   margin-bottom: .3em;
+}
 .cart-link
 {  
    width: fit-content;
@@ -876,15 +865,19 @@ ul{
 }
 .user-tickets
 {
+  width: 100%;
+  max-height: 50vh;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 0 auto;
  
 }
 .user-tickets>h1
 {
    text-align: center;
-   margin: 15px;
+   margin: 15px ;
 }
 
 .user-ticket

@@ -1,7 +1,7 @@
 <?php
 
 
-//require_once "../vendor/autoload.php";
+require_once "../vendor/autoload.php";
 require_once '../models/lib/Database.php';
 require_once '../models/User.php';
 

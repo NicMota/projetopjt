@@ -36,12 +36,14 @@
           
             foreach($tickets as $ticket):    
             $amount = $_SESSION['cart'][$ticket['id']];
-            
+            $price = number_format($ticket['price']*$amount,2,'.');
+            $subtotal+=$price;
         ?>
             <div class="ticket">
                    
                 <h1><?=$ticket['name'];?></h1>            
-                <h1><?= $ticket['desc'] ?></h1>
+                <p><?= $ticket['desc']; ?></p>
+                
                 <select type="number" name='amount[]'>
                         <?php
                         for($i = 0; $i<=$amount;$i++):
@@ -52,6 +54,8 @@
                         <?php
                         endfor;
                         ?>
+                </select>
+               <h3>R$<?=$price?></h3>
                
 
 
@@ -63,16 +67,16 @@
             </div>
            
         <?php
-            //$subtotal += (float)$_SESSION['cart'][$ticket['id']]*$ticket['price'];
+         
             endforeach;
         }
         ?>
 
         
         
-        
+        <h3>TOTAL:R$<?=number_format($subtotal,2,'.')?></h3>
          
-            
+    
         <div class="cart-link">
                 <button name='submit' type='submit'>comprar </button>
             </div>

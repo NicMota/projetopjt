@@ -7,7 +7,8 @@
         'name' => '',
         'desc' => '',
         'date' => '',
-        'tickets_amnt' => ''
+        'tickets_amnt' => '',
+        'price' => ''
       ];
       $id = '';
       if(isset($_GET['id']))
@@ -22,7 +23,7 @@
           $event['desc'] = $e['desc'];
           $event['date'] = new DateTime($e['date']);
           $event['date'] = $event['date']->format("Y-m-d");
-          
+          $event['price'] = $e['price'];
           $event['tickets_amnt'] = $e['tickets_amnt'];
         }
         
@@ -47,6 +48,8 @@
         <input type="date" name="date" value="<?=$event['date']?>">
         <label for=''>tickets_amt </label>
         <input type="number" name="tickets_amnt" id="" value="<?=$event['tickets_amnt'];?>">
+        <label for=''>preço: </label>
+        <input type="number" name="price" id="" value="<?=$event['price'];?>">
 
         <button type="submit" name="submit">edit</button>
      

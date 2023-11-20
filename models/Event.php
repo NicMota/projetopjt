@@ -34,8 +34,8 @@ class Event
     public function createEvent($data)
     {
         try {
-            $stmt = $this->db->conn->prepare("INSERT INTO events(`name`,`desc`,`date`,`tickets_amnt`) VALUES (?,?,?,?)");
-            return $stmt->execute([$data['name'],$data['desc'],$data['date'],$data['tickets_amnt']]);
+            $stmt = $this->db->conn->prepare("INSERT INTO events(`name`,`desc`,`date`,`tickets_amnt`,`price`) VALUES (?,?,?,?,?)");
+            return $stmt->execute([$data['name'],$data['desc'],$data['date'],$data['tickets_amnt'],$data['price']]);
 
         } catch (PDOException $e) {
             echo $e->getMessage();
@@ -66,8 +66,8 @@ class Event
     public function edit($data)
     { 
         try {
-            $stmt = $this->db->conn->prepare("UPDATE events SET `name`=?,`desc`=?,`date`=?,`tickets_amnt`=? WHERE `id`=?");
-            return $stmt->execute([$data['name'],$data['desc'],$data['date'],$data['tickets_amnt'],$data['id']]);
+            $stmt = $this->db->conn->prepare("UPDATE events SET `name`=?,`desc`=?,`date`=?,`tickets_amnt`=?,`price`=? WHERE `id`=?");
+            return $stmt->execute([$data['name'],$data['desc'],$data['date'],$data['tickets_amnt'],$data['price'],$data['id']]);
 
         } catch (PDOException $e) {
             echo $e->getMessage();

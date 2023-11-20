@@ -69,12 +69,17 @@ class User
     {       
         if(!$this->findUserByUsername($user))
         {   
-            $password = password_hash($pass,PASSWORD_BCRYPT);
-            $res = $this->db->insert("users",["user","name","email","phone","pass",'admin'],[$user,$name,$email,$phone,$password,$role]);
-            if($res)
-                return true;
-            else
+            try {
+                $password = password_hash($pass,PASSWORD_BCRYPT);
+                $stmt = $this->db->conn->prepare("INSERT INTO users(`user`,`name`,`email`,`phone`,`pass`,`admin`) VALUES (?,?,?,?,?,?)" );
+           
+                return $stmt->execute([$user,$name,$email,$phone,$password,"\x00"]);
+            } catch (PDOException $e) {
+                echo $e->getMessage();
                 return false;
+            }
+        
+           
         }else
         {   
             return false;
@@ -112,6 +117,41 @@ class User
             return false;
         }
     }
+    public function editUser($data)
+    {   
+        try {
+            $array_keys = array_keys($data);
+            
+            $data['id'] = (int)$data['id'];
+           
+            $query = "UPDATE users SET ";
+            
+            foreach($array_keys as $i =>$key)
+
+            {   if($key!='id')
+                {   
+                    $query.='`'.$key.'`=? ';
+                    if($i<count($array_keys)-2)
+                        $query.=',';
+                }
+               
+            }
+            $query.=" WHERE `id`= ?;";
+            
+       
+            $stmt = $this->db->conn->prepare($query);
+            $values = array_values($data);
+          
+          
+            return $stmt->execute($values);
+          
+
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+       
+    }
     public function changePassword($email,$newPassword)
     {   $newPassword = password_hash($newPassword,PASSWORD_BCRYPT);
         if($this->db->update('users',['pass'],[$newPassword],['email','=',$email]))
@@ -140,4 +180,5 @@ class User
         }
     }
 }
+
 

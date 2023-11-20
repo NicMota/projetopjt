@@ -10,7 +10,7 @@
 
         <div class='top-content'>
             <div class="museum-img">
-
+                
             </div>
             
         </div>
@@ -49,7 +49,7 @@
                 </h1>
                 <div class="slider">
                   
-                    <div class="slider-row active">
+                    <div class="slider-row ">
                         <?php 
                         foreach ($collection as $item) 
                         {

@@ -30,6 +30,7 @@ if(isset($_GET['delete']))
                 <th>desc:</th>
                 <th>data:</th>
                 <th>quantidade <br> de ingressos:</th>
+                <th>preço:</th>
             </tr>
         </thead>
         <?php
@@ -47,6 +48,9 @@ if(isset($_GET['delete']))
                 </td>
                 <td>
                     <?=$event['tickets_amnt']?>
+                </td>
+                <td>
+                    <?=$event['price']?>
                 </td>
                 <td>
                     <a href='eventEdit.php?id=<?=$event['id']?>' class='yellow-button'>editar</a>

@@ -33,7 +33,7 @@
                     <div class="ticket">
                         <h1 ><?=$ticket['name']?></h1>
                         <input type="hidden" name="product_id[]" value='<?=$ticket['id']?>'/>
-                        <select type="number" name="product_qnt[]" '>
+                        <select type="number" name="product_qnt[]" >
                         <?php
                         for($i = 0; $i<=$disponible;$i++):
                         ?>
@@ -44,6 +44,8 @@
                         endfor;
                         ?>
                         </select>
+
+                        <h3>PREÇO:R$<?=$ticket['price'];?></h3>
                         <h3> DISPONIVEL:x<?=$disponible?></h3>
                     </div>
             <?php
