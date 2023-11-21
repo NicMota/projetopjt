@@ -8,13 +8,13 @@
     <div class="form-card">
 
         <form action="" method="post">
-            <label for="">username:</label>
-            <input type="text" name="user" id="" placeholder="username">
-            <label for="">pass:</label>
-            <input type="password" name='pass' id='' placeholder='password'>
+            <label for="">usuario:</label>
+            <input type="text" name="user" id="" placeholder="usuario">
+            <label for="">senha:</label>
+            <input type="password" name='pass' id='' placeholder='senha'>
             <button type="submit" name='submit'>loggin</button>
-            <a href="register.php">Don't Have an Account? Click Here</a>
-            <a href="forgotPassword.php">Forgot your Password?</a>
+            <a href="register.php">Não tem uma conta? Clique aqui!</a>
+            <a href="forgotPassword.php">Esqueceu sua senha?</a>
         </form>
     
     </div>

@@ -19,6 +19,17 @@
      
      $users = $userController->index();
  ?>
+ <?php
+    if(isset($_GET['delete']))
+    {   
+        
+        $id = intval($_GET['id']); 
+        $userController->delete($id);
+
+        header("location: userPanel.php");
+
+    }
+?>
 
 
 
@@ -77,17 +88,7 @@
 </html>
 
 
-<?php
-    if(isset($_GET['delete']))
-    {   
-        
-        $id = intval($_GET['id']); 
-        $userController->delete($id);
 
-        header("Refresh: 0; url=./userPanel.php");
-
-    }
-?>
 <?php 
         include './inc/footer_inc.php';
 ?>

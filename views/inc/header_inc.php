@@ -45,24 +45,24 @@
 
     <nav class="navbar">
       <h1>
-        Singed
+       Museu Paulo Agostinho Sobrinho
       </h1>
       <ul type='none'>
         
         <li class='link'>
-          <a href="index.php">HOME</a>
+          <a href="index.php">INICIO</a>
         </li>
         <li class='link'> 
-          <a href="visit.php">VISIT</a>
+          <a href="visit.php">VISITAR</a>
         </li>
         <li class='link'>
-          <a href="whatson.php">WHAT'S ON</a>
+          <a href="whatson.php">NOVIDADES</a>
         </li>
         <li class='link'>
-          <a href="login.php">SIGN IN</a>
+          <a href="login.php">LOGIN</a>
         </li>
         <li class='link'>
-          <a href="register.php">SIGN UP</a>
+          <a href="register.php">REGISTRAR</a>
         </li>
       </ul>
     </nav>
@@ -75,11 +75,11 @@
     ?>
     <nav class="navbar">
       <h1>
-        Singed
+       Museu Paulo Agostinho Sobrinho
       </h1>
       <ul type='none'>
         <li class='link'>
-          <a href="index.php">HOME</a>
+          <a href="index.php">INICIO</a>
         </li>
         <li class='link'>
           <a href="visit.php">VISITAR</a>
@@ -94,7 +94,7 @@
           <a href="userPage.php">ÁREA DO USUÁRIO</a>
         </li>
         <li class='link'>
-          <a href="?logout">LOG OUT</a>
+          <a href="?logout">SAIR</a>
         </li>
         
       </ul>
@@ -109,27 +109,27 @@
     ?>
     <nav class="navbar">
       <h1>
-        Singed
+       Museu Paulo Agostinho Sobrinho
       </h1>
       <ul type='none'>
           
         <li class='link'>
-          <a href="index.php">HOME</a>
+          <a href="index.php">INICIO</a>
         </li>
         <li class='link'>
-          <a href="userPanel.php">USERS PANEL</a>
+          <a href="userPanel.php">PAINEL DO USUARIO</a>
         </li>
         <li class='link'> 
-          <a href="collectionPanel.php">COLLECTION PANEL</a>
+          <a href="collectionPanel.php">PAINEL DO ACERVO</a>
         </li>
         <li class='link'>
-          <a href="eventPanel.php">EVENTS PANEL</a>
+          <a href="eventPanel.php">PAINEL DE EVENTOS</a>
         </li>
         <li class='link'>
-          <a href="userPage.php">Area do Usuário</a>
+          <a href="userPage.php">ÁREA DO USUÁRIO</a>
         </li>
         <li class='link'>
-          <a href="?logout">LOG OUT</a>
+          <a href="?logout">SAIR</a>
         </li>
         
       </ul>

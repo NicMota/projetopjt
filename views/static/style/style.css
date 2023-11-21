@@ -94,7 +94,7 @@ body
 {  
 
    width: 100vw;
-   height: 70vh;
+   height: 100vh;
    background-image: url(../images/museum.png);
    background-size: contain;
    background-repeat: no-repeat;

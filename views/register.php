@@ -7,23 +7,23 @@
     <div class='form-card'>
         <form action="" method="POST" >
 
-                <label for="username">username:</label>
+                <label for="username">usuario:</label>
                 <input type="text" name="user" id="">
                 
-                <label for="username">name:</label>
+                <label for="username">nome:</label>
                 <input type="text" name="name" id="">
 
                 <label for="username">email:</label>
                 <input type="text" name="email" id="">
 
-                <label for="username">phone:</label>
+                <label for="username">telefone:</label>
                 <input type="text" name="phone" id="">
 
-                <label for="password">password:</label>
+                <label for="password">senha:</label>
                 <input type="password" name="pass" id="">
 
-                <button type="submit" name="submit">register</button>
-                <a href="login.php"> Have an Account? Click Here</a>
+                <button type="submit" name="submit">registrar</button>
+                <a href="login.php"> Tem uma conta? Clique aqui!</a>
 
         </form>
     </div>
