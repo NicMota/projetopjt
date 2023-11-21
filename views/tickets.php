@@ -22,6 +22,7 @@
         }
     }
 ?>
+    <div class="padding-div">
     <div class="tickets">
         <form action=""method='post'>
             <?php 
@@ -58,6 +59,8 @@
         </form>
     </div>
 
+    </div>
+    
 <?php
     include_once 'inc/footer_inc.php';
 ?>

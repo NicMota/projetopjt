@@ -90,16 +90,33 @@ body
    color: white;
    z-index: 100;
 }
+
 .museum-img
 {  
 
    width: 100vw;
-   height: 100vh;
+   height: 85vh;
    background-image: url(../images/museum.png);
    background-size: contain;
    background-repeat: no-repeat;
    background-position: center;
+   display: flex;
+   flex-direction: column;
    
+}
+.links
+{
+   position: relative;
+   margin: 0 auto;
+   
+   margin-top: auto;
+   margin-bottom: 10px;
+  
+   width: fit-content;
+}
+.museum-img .links a
+{
+   margin:3px;
 }
 .middle-content
 {  
@@ -434,15 +451,17 @@ min-height: 100%;
 .collection-grid
 {  
 
-   width: fit-content;
+   width: 1100px;
+   
+   
    height: fit-content;
    display: flex;
    flex-wrap: wrap;
    
+ 
    border-radius: 5px;
-  
-   margin: 50px;
-   display: flex;
+   margin: 50px auto;
+ 
    
   
 
@@ -452,21 +471,28 @@ min-height: 100%;
    align-items: center ;
    display: flex;
    flex-direction: column;
-  
    margin: 10px;
-   max-width: max-content;
+   justify-content: center;
+   width:fit-content;
+   
+   height:85vh;
+   max-height: fit-content;
+   overflow: hidden;
 }
-.collection-desc h1
+.collection-desc 
 {
    word-wrap: break-word;
+  
+   font-size: 1.5em;
+   max-width: 300px;
 }
 .collection-image
 {  
   
    display: flex;
-   width: fit-content;
-   height: 50vh;
-   
+   width: 300px;
+   height: auto;
+  
    word-wrap: break-word;
    margin: 10px;
    overflow: hidden;
@@ -474,13 +500,14 @@ min-height: 100%;
    border-radius: 8px;
    cursor: pointer;
 }
+
 .collection-image img
 {  
-   max-width: 100%;
-   max-height: 100%;
-   width: auto;
-   height: auto;
-   object-fit: cover;
+   
+   position: relative;
+   
+   min-width: 100%;
+   min-height: 100%;
    transition: transform 0.7s;
 }
 .collection-image img:hover
@@ -840,22 +867,29 @@ ul{
 }
 .ticket
 {
-   margin: 30px;
+   
    padding: 15px;
+   
    border-bottom: solid black thin;
 }
 
 .cart-link
 {
    margin-left: auto;
+   
 }
-
+.padding-div
+{
+   padding: 30px;
+}
 .cart
 {  
+   display: flex;
    border: solid black thin;
    padding: 30px;
    margin: auto auto;
-   width: fit-content;
+   
+
    background-color: #e8ffd0;
 }
 .cart form
@@ -888,4 +922,35 @@ ul{
    background-color: #e8ffd0;
    border-radius: 5px;
    width: 30vw;
+}
+.title
+{
+   margin: 0 auto;
+}
+.event-details
+{
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.event-details .desc
+{
+   
+   width: 40vw;
+   font-size: 1.5em;
+   margin-bottom: 20px;
+}
+.image-1
+{
+   margin: 30px;
+   display: flex;
+   height: 80vh;
+
+}
+.image-1 img
+{
+   width: 100%;
+   height: 100%;
 }

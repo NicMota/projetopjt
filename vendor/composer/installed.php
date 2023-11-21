@@ -3,7 +3,7 @@
         'name' => 'nicmota/projetopjt',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '0dc0342e86416df3d7738f4c36605168ee58a6f2',
+        'reference' => 'ec50930f79c8515956b33235e90e2284f7303c49',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'nicmota/projetopjt' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '0dc0342e86416df3d7738f4c36605168ee58a6f2',
+            'reference' => 'ec50930f79c8515956b33235e90e2284f7303c49',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

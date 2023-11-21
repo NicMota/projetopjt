@@ -17,8 +17,10 @@ $payloadQrCode = $obPayload->getPayload();
 
 $obQrCode = new QrCode($payloadQrCode);
 
-$image = (new Output\Png)->output($obQrCode,400);
 
+$image = (new Output\Png)->output($obQrCode,400);
+header("Content-Type: image/png");
+echo $image;
 ?>
 <img src="<?=$image?>" alt="" srcset=""> </img>
 

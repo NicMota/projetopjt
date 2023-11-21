@@ -63,6 +63,7 @@ class Event
             return false;
         }
     }
+   
     public function edit($data)
     { 
         try {
