@@ -13,7 +13,7 @@ if(isset($_GET['delete']))
     $id = intval($_GET['id']); 
     $eventController->delete($id);
 
-    header("Location: collectionPanel.php");
+    header("Location: eventPanel.php");
 
 }
 ?>   

@@ -19,7 +19,7 @@
 ?>
 
 <div class="middle-content">
-    <div class="padding-div">
+    
         <div class="cart">
             <form action="" method="post">
                 
@@ -84,7 +84,7 @@
             
             </form>
         </div>
-    </div>
+ 
 
 </div>
     

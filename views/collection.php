@@ -33,7 +33,7 @@ if(isset($_SESSION['id']))
 {
 ?>
 <div class="bottom-content comments-section">
-#asdasd
+
 
     <div class="comment-form">
             <form action="" method="post">
